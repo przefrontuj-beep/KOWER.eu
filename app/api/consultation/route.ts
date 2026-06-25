@@ -6,6 +6,54 @@ import { siteConfig } from "@/lib/site";
 
 export const runtime = "nodejs";
 
+/* ── Rate Limiting (in-memory, per-IP) ── */
+const RATE_LIMIT_WINDOW_MS = 60_000; // 1 minute
+const RATE_LIMIT_MAX = 5; // max 5 requests per window
+
+const rateLimitMap = new Map<string, { count: number; resetAt: number }>();
+
+function isRateLimited(ip: string): boolean {
+  const now = Date.now();
+  const entry = rateLimitMap.get(ip);
+
+  if (!entry || now > entry.resetAt) {
+    rateLimitMap.set(ip, { count: 1, resetAt: now + RATE_LIMIT_WINDOW_MS });
+    return false;
+  }
+
+  entry.count++;
+  return entry.count > RATE_LIMIT_MAX;
+}
+
+// Cleanup stale entries every 5 minutes
+setInterval(() => {
+  const now = Date.now();
+  for (const [key, value] of rateLimitMap) {
+    if (now > value.resetAt) rateLimitMap.delete(key);
+  }
+}, 5 * 60_000);
+
+/* ── CORS ── */
+const ALLOWED_ORIGINS = new Set([
+  siteConfig.baseUrl,
+  siteConfig.baseUrl.replace("https://", "https://www."),
+  "http://localhost:3000",
+  "http://localhost:3001",
+]);
+
+function corsHeaders(origin: string | null) {
+  const allowedOrigin = origin && ALLOWED_ORIGINS.has(origin) ? origin : ALLOWED_ORIGINS.values().next().value;
+  return {
+    "Access-Control-Allow-Origin": allowedOrigin!,
+    "Access-Control-Allow-Methods": "POST, OPTIONS",
+    "Access-Control-Allow-Headers": "Content-Type",
+  };
+}
+
+export async function OPTIONS(request: Request) {
+  const origin = request.headers.get("origin");
+  return new NextResponse(null, { status: 204, headers: corsHeaders(origin) });
+}
 const maxFiles = 5;
 const maxFileSize = 10 * 1024 * 1024;
 const maxEmailAttachmentTotal = 18 * 1024 * 1024;
@@ -36,7 +84,8 @@ function safeFileName(fileName: string) {
 async function verifyRecaptcha(token: string) {
   const secret = process.env.RECAPTCHA_SECRET_KEY;
   if (!secret) {
-    return true;
+    console.warn("RECAPTCHA_SECRET_KEY nie jest ustawiony — odrzucam żądanie dla bezpieczeństwa.");
+    return false;
   }
   if (!token) {
     return false;
@@ -147,7 +196,31 @@ async function persistLead(
 }
 
 export async function POST(request: Request) {
+  const origin = request.headers.get("origin");
+  const headers = corsHeaders(origin);
+
   try {
+    /* ── Rate Limit ── */
+    const ip =
+      request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ||
+      request.headers.get("x-real-ip") ||
+      "unknown";
+
+    if (isRateLimited(ip)) {
+      return NextResponse.json(
+        { ok: false, message: "Zbyt wiele prób. Spróbuj ponownie za minutę." },
+        { status: 429, headers },
+      );
+    }
+
+    /* ── CORS ── */
+    if (origin && !ALLOWED_ORIGINS.has(origin)) {
+      return NextResponse.json(
+        { ok: false, message: "Niedozwolone źródło żądania." },
+        { status: 403, headers },
+      );
+    }
+
     const data = await request.formData();
     const name = getText(data, "name");
     const email = getText(data, "email").toLowerCase();
