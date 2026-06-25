@@ -1,0 +1,141 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function hasAdminClaim() {
+      return isSignedIn() && request.auth.token.admin == true;
+    }
+
+    function hasAdminProfile() {
+      return isSignedIn()
+        && exists(/databases/$(database)/documents/users/$(request.auth.uid))
+        && get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == "admin"
+        && (!get(/databases/$(database)/documents/users/$(request.auth.uid)).data.keys().hasAny(['disabled'])
+            || get(/databases/$(database)/documents/users/$(request.auth.uid)).data.disabled != true);
+    }
+
+    function isAdmin() {
+      return hasAdminClaim() || hasAdminProfile();
+    }
+
+    function validStatus(value) {
+      return value in ['draft', 'published', 'hidden'];
+    }
+
+    function validPublicLead() {
+      let data = request.resource.data;
+      return data.keys().hasOnly([
+          'name', 'email', 'phone', 'message', 'scope', 'topic', 'source',
+          'status', 'adminNote', 'attachments', 'createdAt', 'updatedAt'
+        ])
+        && data.name is string && data.name.size() >= 2 && data.name.size() <= 120
+        && data.email is string && data.email.size() >= 5 && data.email.size() <= 160
+        && data.phone is string && data.phone.size() <= 40
+        && data.message is string && data.message.size() >= 5 && data.message.size() <= 5000
+        && data.scope is string && data.scope.size() <= 120
+        && data.topic is string && data.topic.size() <= 120
+        && data.source is string && data.source.size() <= 120
+        && data.status == 'new'
+        && data.adminNote == ''
+        && data.attachments is list && data.attachments.size() <= 5;
+    }
+
+    function validGalleryCreate() {
+      let data = request.resource.data;
+      return data.title is string && data.title.size() > 0 && data.title.size() <= 100
+        && data.alt is string && data.alt.size() <= 180
+        && data.category is string && data.category.size() > 0
+        && data.imageUrl is string && data.imageUrl.size() > 0
+        && data.mediumUrl is string && data.mediumUrl.size() > 0
+        && data.thumbnailUrl is string && data.thumbnailUrl.size() > 0
+        && data.storagePath is string
+        && data.mediumStoragePath is string
+        && data.thumbnailStoragePath is string
+        && data.urlLarge is string && data.urlLarge.size() > 0
+        && data.urlMedium is string && data.urlMedium.size() > 0
+        && data.urlThumb is string && data.urlThumb.size() > 0
+        && data.storagePathLarge is string
+        && data.storagePathMedium is string
+        && data.storagePathThumb is string
+        && data.isPublished is bool
+        && data.featured is bool
+        && data.showOnHomepage is bool
+        && data.showInGallery is bool
+        && data.homepageOrder is number
+        && data.galleryOrder is number
+        && data.status in ['published', 'hidden']
+        && data.mediumSizeBytes is number
+        && data.order is number;
+    }
+
+    match /users/{userId} {
+      allow read: if isSignedIn() && (request.auth.uid == userId || isAdmin());
+      allow create, update, delete: if isAdmin();
+    }
+
+    match /kowerGallery/{imageId} {
+      allow read: if resource.data.status == 'published'
+        || (!resource.data.keys().hasAny(['status']) && resource.data.isPublished == true)
+        || isAdmin();
+      allow create: if isAdmin() && validGalleryCreate();
+      allow update, delete: if isAdmin();
+    }
+
+    match /realizations/{realizationId} {
+      allow read: if resource.data.status == 'published' || isAdmin();
+      allow create: if isAdmin()
+        && request.resource.data.title is string
+        && request.resource.data.slug is string
+        && validStatus(request.resource.data.status);
+      allow update: if isAdmin() && validStatus(request.resource.data.status);
+      allow delete: if isAdmin();
+    }
+
+    match /offers/{offerId} {
+      allow read: if resource.data.status == 'published' || isAdmin();
+      allow create, update, delete: if false;
+    }
+
+    match /producers/{producerId} {
+      allow read: if resource.data.status == 'published' || isAdmin();
+      allow create, update, delete: if false;
+    }
+
+    match /sitePages/{pageId} {
+      allow read: if resource.data.status == 'published' || isAdmin();
+      allow create, update, delete: if false;
+    }
+
+    match /seoEntries/{entryId} {
+      allow read: if resource.data.status == 'published' || isAdmin();
+      allow create, update, delete: if false;
+    }
+
+    match /siteSettings/{documentId} {
+      allow read: if documentId in ['contact', 'homepage', 'global'] || isAdmin();
+      allow write: if false;
+    }
+
+    match /leads/{leadId} {
+      allow create: if validPublicLead() || isAdmin();
+      allow read, update, delete: if isAdmin();
+    }
+
+    match /activityLogs/{logId} {
+      allow read, create: if isAdmin();
+      allow update, delete: if false;
+    }
+
+    match /projects/{projectId} {
+      allow read: if resource.data.published == true || isAdmin();
+      allow write: if false;
+    }
+
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

@@ -1,0 +1,61 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function hasAdminClaim() {
+      return isSignedIn() && request.auth.token.admin == true;
+    }
+
+    function hasAdminProfile() {
+      return isSignedIn()
+        && firestore.exists(/databases/(default)/documents/users/$(request.auth.uid))
+        && firestore.get(/databases/(default)/documents/users/$(request.auth.uid)).data.role == "admin"
+        && (!firestore.get(/databases/(default)/documents/users/$(request.auth.uid)).data.keys().hasAny(['disabled'])
+            || firestore.get(/databases/(default)/documents/users/$(request.auth.uid)).data.disabled != true);
+    }
+
+    function isAdmin() {
+      return hasAdminClaim() || hasAdminProfile();
+    }
+
+    function isSafeImage() {
+      return request.resource != null
+        && request.resource.size < 3 * 1024 * 1024
+        && request.resource.contentType.matches('image/(jpeg|png|webp)');
+    }
+
+    // Publiczne zdjęcia strony. Zapis i usuwanie zawsze wymagają roli admina.
+    match /kower/gallery/{allPaths=**} {
+      allow read: if true;
+      allow create: if isSignedIn() && isSafeImage();
+      allow update: if isAdmin() && isSafeImage();
+      allow delete: if isAdmin();
+    }
+
+    match /kower/cms/{allPaths=**} {
+      allow read: if true;
+      allow create, update, delete: if false;
+    }
+
+    match /projects/{allPaths=**} {
+      allow read: if true;
+      allow create, update, delete: if false;
+    }
+
+    // Załączniki formularza są prywatne. Admin SDK omija Rules podczas zapisu,
+    // a odczyt przez aplikację wymaga zweryfikowanej roli administratora.
+    match /kower/leads/{allPaths=**} {
+      allow read, delete: if isAdmin();
+      allow create, update: if isAdmin()
+        && request.resource.size < 10 * 1024 * 1024
+        && request.resource.contentType.matches('(image/(jpeg|png|webp)|application/pdf)');
+    }
+
+    match /{allPaths=**} {
+      allow read, write: if false;
+    }
+  }
+}

@@ -1,0 +1,74 @@
+<svg width="1950" height="520" viewBox="0 0 1950 520" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Trójwymiarowy napis Kower</title>
+  <desc id="desc">Ciemny, metaliczny napis KOWER z subtelnymi zielonymi akcentami i głębią 3D.</desc>
+  <defs>
+    <linearGradient id="face" x1="900" y1="72" x2="900" y2="388" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#57534C"/>
+      <stop offset="0.22" stop-color="#191A17"/>
+      <stop offset="0.52" stop-color="#323128"/>
+      <stop offset="0.78" stop-color="#0E0F0D"/>
+      <stop offset="1" stop-color="#4B4439"/>
+    </linearGradient>
+    <linearGradient id="bevel" x1="90" y1="86" x2="1700" y2="356" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#BEB19C"/>
+      <stop offset="0.16" stop-color="#302A22"/>
+      <stop offset="0.36" stop-color="#E6DAC8"/>
+      <stop offset="0.55" stop-color="#1A1A17"/>
+      <stop offset="0.74" stop-color="#9D8F79"/>
+      <stop offset="1" stop-color="#22221D"/>
+    </linearGradient>
+    <linearGradient id="wood" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#6F4B2E"/>
+      <stop offset="0.5" stop-color="#2A1D13"/>
+      <stop offset="1" stop-color="#8A633D"/>
+    </linearGradient>
+    <radialGradient id="greenGlow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(526 246) rotate(90) scale(118 112)">
+      <stop stop-color="#7FE22D" stop-opacity="0.88"/>
+      <stop offset="0.42" stop-color="#62B724" stop-opacity="0.38"/>
+      <stop offset="1" stop-color="#62B724" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="depth" x="-5%" y="-12%" width="110%" height="130%" color-interpolation-filters="sRGB">
+      <feDropShadow dx="16" dy="22" stdDeviation="10" flood-color="#070807" flood-opacity="0.42"/>
+      <feDropShadow dx="-5" dy="-5" stdDeviation="2" flood-color="#F6EBDD" flood-opacity="0.24"/>
+    </filter>
+    <filter id="softReflection" x="-4%" y="-8%" width="108%" height="124%" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="6"/>
+    </filter>
+    <clipPath id="letters">
+      <text x="38" y="360" font-family="Georgia, 'Times New Roman', serif" font-size="395" font-weight="700" letter-spacing="-22">KOWER</text>
+    </clipPath>
+  </defs>
+
+  <ellipse cx="975" cy="446" rx="880" ry="42" fill="#090A08" opacity="0.16" filter="url(#softReflection)"/>
+  <g transform="translate(18 24)" opacity="0.58">
+    <text x="38" y="360" font-family="Georgia, 'Times New Roman', serif" font-size="395" font-weight="700" letter-spacing="-22" fill="#080907" stroke="#080907" stroke-width="14" opacity="0.78">KOWER</text>
+  </g>
+
+  <g clip-path="url(#letters)">
+    <rect x="0" y="0" width="1950" height="420" fill="url(#face)"/>
+    <rect x="42" y="126" width="145" height="238" fill="url(#wood)" opacity="0.82"/>
+    <rect x="236" y="102" width="132" height="270" fill="#1D1B16" opacity="0.78"/>
+    <rect x="472" y="108" width="150" height="260" fill="url(#greenGlow)" opacity="0.84"/>
+    <rect x="750" y="122" width="118" height="244" fill="#26231C" opacity="0.82"/>
+    <rect x="1052" y="116" width="142" height="256" fill="url(#wood)" opacity="0.58"/>
+    <rect x="1308" y="102" width="114" height="272" fill="#171713" opacity="0.84"/>
+    <rect x="1502" y="116" width="108" height="252" fill="url(#greenGlow)" opacity="0.52"/>
+    <path d="M42 172H160M83 220H184M71 280H172M754 172H865M756 226H884M1078 172H1190M1320 166H1418M1322 220H1416M1516 174H1608M1518 232H1612" stroke="#D8C6A8" stroke-opacity="0.24" stroke-width="5"/>
+    <path d="M486 116C525 158 529 277 487 352" stroke="#62B724" stroke-width="8" stroke-linecap="round" opacity="0.68"/>
+    <path d="M1536 112C1584 170 1583 282 1536 350" stroke="#62B724" stroke-width="7" stroke-linecap="round" opacity="0.56"/>
+    <circle cx="528" cy="244" r="27" stroke="#62B724" stroke-width="6" opacity="0.86"/>
+    <circle cx="528" cy="244" r="11" fill="#62B724" opacity="0.72"/>
+    <circle cx="1518" cy="292" r="16" fill="#62B724" opacity="0.52"/>
+    <path d="M92 104C372 72 640 94 891 89C1160 84 1390 76 1686 100" stroke="#F2E7D7" stroke-opacity="0.22" stroke-width="8"/>
+    <path d="M58 344C328 384 618 356 902 368C1188 380 1438 360 1712 340" stroke="#000" stroke-opacity="0.36" stroke-width="13"/>
+  </g>
+
+  <text x="38" y="360" font-family="Georgia, 'Times New Roman', serif" font-size="395" font-weight="700" letter-spacing="-22" fill="url(#face)" fill-opacity="0.2" stroke="#0B0C0A" stroke-width="15" filter="url(#depth)">KOWER</text>
+  <text x="38" y="360" font-family="Georgia, 'Times New Roman', serif" font-size="395" font-weight="700" letter-spacing="-22" fill="none" stroke="url(#bevel)" stroke-width="8">KOWER</text>
+  <text x="38" y="360" font-family="Georgia, 'Times New Roman', serif" font-size="395" font-weight="700" letter-spacing="-22" fill="none" stroke="#F5EDDF" stroke-opacity="0.32" stroke-width="2" transform="translate(-2 -4)">KOWER</text>
+  <text x="38" y="360" font-family="Georgia, 'Times New Roman', serif" font-size="395" font-weight="700" letter-spacing="-22" fill="none" stroke="#050605" stroke-opacity="0.82" stroke-width="3">KOWER</text>
+
+  <g opacity="0.16" transform="translate(0 790) scale(1 -0.78)">
+    <text x="38" y="360" font-family="Georgia, 'Times New Roman', serif" font-size="395" font-weight="700" letter-spacing="-22" fill="#11120F">KOWER</text>
+  </g>
+</svg>

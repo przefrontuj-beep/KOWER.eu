@@ -1,26 +1,335 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Brand colors */
+  --accent: #487330; /* Premium, deep forest green */
+  --accent-hover: #3c5f27; /* Darker hover forest green */
+  --accent-light: #e6edd9; /* Light elegant sage green */
+  --accent-bright: #62b724; /* Original brand green for specific accents */
+  --stone: #e7e0d5;
+  --muted: #6d6a62;
+  --wood: #2e2620; /* Deep premium wood/walnut tone */
+
+  /* Shadcn variables mapped to Brand colors */
+  --background: #f6f2ea;
+  --foreground: #1b1b18;
+  --card: #faf7f0;
+  --card-foreground: #1b1b18;
+  --popover: #fbfaf5;
+  --popover-foreground: #1b1b18;
+  --primary: #487330;
+  --primary-foreground: #ffffff;
+  --secondary: #e7e0d5;
+  --secondary-foreground: #2e2620;
+  --muted-foreground: #6d6a62;
+  --accent-foreground: #3c5f27;
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: #ffffff;
+  --border: #d9ddd2;
+  --input: #d9ddd2;
+  --ring: #487330;
+  --radius: 0.75rem;
+
+  --chart-1: oklch(0.87 0 0);
+  --chart-2: oklch(0.556 0 0);
+  --chart-3: oklch(0.439 0 0);
+  --chart-4: oklch(0.371 0 0);
+  --chart-5: oklch(0.269 0 0);
+
+  --sidebar: #fbfaf5;
+  --sidebar-foreground: #1b1b18;
+  --sidebar-primary: #487330;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #e6edd9;
+  --sidebar-accent-foreground: #3c5f27;
+  --sidebar-border: #d9ddd2;
+  --sidebar-ring: #487330;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-light: var(--accent-light);
+  --color-accent-bright: var(--accent-bright);
+  --color-stone: var(--stone);
+  --color-muted: var(--muted);
+  --color-wood: var(--wood);
+  --font-sans: var(--font-inter);
+  --font-serif: var(--font-cormorant);
+
+  /* Shadcn standard theme variables */
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* Sidebar */
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  /* Charts */
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--background);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter), Arial, Helvetica, sans-serif;
+}
+
+::selection {
+  background: rgba(72, 115, 48, 0.22);
+}
+
+.focus-ring {
+  outline: 2px solid transparent;
+  outline-offset: 4px;
+}
+.focus-ring:focus-visible {
+  outline-color: var(--accent);
+}
+
+img {
+  max-width: 100%;
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.project-card-gradient::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background:
+    linear-gradient(180deg, rgba(20, 18, 15, 0.58) 0%, rgba(20, 18, 15, 0.1) 48%, rgba(20, 18, 15, 0.62) 100%);
+  pointer-events: none;
+}
+
+.mobile-menu-toggle {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  z-index: 50;
+  display: inline-flex;
+  width: 44px;
+  height: 44px;
+  transform: translateY(-50%);
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 640px) {
+  .mobile-menu-toggle {
+    right: 32px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .mobile-menu-toggle {
+    display: none;
+  }
+}
+
+/* 3D Wordmark in Hero Section - aligns with the perspective of the kitchen floor */
+.hero-wordmark-container {
+  position: absolute;
+  bottom: 2vh;
+  right: 2.8vw;
+  width: 88vw;
+  max-width: 390px;
+  height: 112px;
+  transform-origin: bottom right;
+  transform: perspective(1400px) rotateY(-3deg) rotateZ(-0.4deg);
+  transform-style: preserve-3d;
+  transition: transform 0.3s ease;
+}
+
+@media (min-width: 640px) {
+  .hero-wordmark-container {
+    bottom: 2.4vh;
+    right: 2.8vw;
+    width: 68vw;
+    max-width: 620px;
+    height: 176px;
+    transform: perspective(1480px) rotateY(-3deg) rotateZ(-0.4deg);
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-wordmark-container {
+    bottom: 7vh;
+    left: 680px;
+    right: 26px;
+    width: auto;
+    max-width: none;
+    height: 210px;
+    transform: perspective(1600px) rotateY(-2deg) rotateZ(-0.28deg);
+  }
+}
+
+@media (min-width: 1280px) {
+  .hero-wordmark-container {
+    bottom: 7.4vh;
+    left: 750px;
+    right: 52px;
+    width: auto;
+    max-width: none;
+    height: 238px;
+    transform: perspective(1700px) rotateY(-1.8deg) rotateZ(-0.22deg);
+  }
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.922 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.556 0 0);
+  --chart-1: oklch(0.87 0 0);
+  --chart-2: oklch(0.556 0 0);
+  --chart-3: oklch(0.439 0 0);
+  --chart-4: oklch(0.371 0 0);
+  --chart-5: oklch(0.269 0 0);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.556 0 0);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    @apply font-sans;
+  }
+}
+
+/* Custom background positioning for Hero image on PC to prevent cutoffs */
+@media (min-width: 640px) {
+  .hero-desktop-bg {
+    object-position: 90% bottom !important;
+  }
+
+  .hero-title-emboss {
+    text-shadow:
+      1px 1px 0 rgba(255, 255, 255, 0.95),
+      1.5px 2px 3px rgba(28, 27, 24, 0.15);
+  }
+
+  /* 3D perspective slant for the wall text in the Hero section to match the wall's render angle */
+  .hero-wall-text-container {
+    position: relative;
+    transform: perspective(1200px) rotateY(16.5deg) rotateX(1.2deg) rotateZ(-0.5deg) !important;
+    transform-origin: left center !important;
+  }
+
+  /* Soft light glow behind the text when it starts to overlap the kitchen (on smaller viewports) */
+  @media (max-width: 1299px) {
+    .hero-wall-text-container::before {
+      content: "";
+      position: absolute;
+      inset: -30px -80px -30px -40px;
+      background: linear-gradient(
+        90deg,
+        rgba(250, 246, 236, 0.98) 0%,
+        rgba(250, 246, 236, 0.92) 55%,
+        rgba(250, 246, 236, 0.65) 78%,
+        rgba(250, 246, 236, 0) 100%
+      ) !important;
+      z-index: -1;
+      pointer-events: none;
+      border-radius: 30px;
+      filter: blur(10px);
+  }
+}
+}
+
+@media (max-width: 639px) {
+  .hero-mobile-text-shadow {
+    text-shadow: 0 2px 10px rgba(13, 8, 5, 0.98), 0 4px 24px rgba(13, 8, 5, 0.8) !important;
+  }
+}
+
+.hero-description-copy {
+  display: block;
+}
+
+.hero-description-copy::before {
+  content: "Projektujemy i tworzymy kuchnie,\A szafy oraz zabudowy w Kraśniku\A dopracowane w każdym detalu.";
+  white-space: pre-line;
+}
+
+@media (min-width: 640px) {
+  .hero-description-copy::before {
+    content: "Projektujemy i tworzymy kuchnie, szafy oraz autorskie zabudowy meblowe w Kraśniku i okolicach. Łączymy precyzję nowoczesnego parku maszynowego z rzemieślniczą dbałością o każdy milimetr.";
+    white-space: normal;
+  }
 }

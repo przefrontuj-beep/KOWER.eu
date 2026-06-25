@@ -1,0 +1,2467 @@
+[browser] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="pl" className="h-full scr...">
+                          <body
+                            className="flex min-h-full flex-col"
+-                           __processed_932a1df7-390f-4964-859b-da2cbc74ac60__="true"
+-                           bis_register="W3sibWFzdGVyIjp0cnVlLCJleHRlbnNpb25JZCI6ImVwcGlvY2VtaG1ubGJoanBsY2drb2ZjaWll..."
+                          >
+                  ...
+ 
+[browser] Image with src "http://localhost:3001/logo/kower-logo.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="pl" className="h-full scr...">
+                          <body
+                            className="flex min-h-full flex-col"
+-                           __processed_d5049d5c-7bd4-4921-a74c-dcadbc02091a__="true"
+-                           bis_register="W3sibWFzdGVyIjp0cnVlLCJleHRlbnNpb25JZCI6ImVwcGlvY2VtaG1ubGJoanBsY2drb2ZjaWll..."
+                          >
+                  ...
+ 
+[browser] Image with src "http://localhost:3001/logo/kower-logo.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[browser] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="pl" className="h-full scr...">
+                          <body
+                            className="flex min-h-full flex-col"
+-                           __processed_fb011f90-1ece-48ba-b248-2322f967bfdf__="true"
+-                           bis_register="W3sibWFzdGVyIjp0cnVlLCJleHRlbnNpb25JZCI6ImVwcGlvY2VtaG1ubGJoanBsY2drb2ZjaWll..."
+                          >
+                  ...
+ 
+[browser] Image with src "http://localhost:3001/logo/kower-logo.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="pl" className="h-full scr...">
+                          <body
+                            className="flex min-h-full flex-col"
+-                           __processed_76bde428-34f9-4331-9948-2ca48aaa6246__="true"
+-                           bis_register="W3sibWFzdGVyIjp0cnVlLCJleHRlbnNpb25JZCI6ImVwcGlvY2VtaG1ubGJoanBsY2drb2ZjaWll..."
+                          >
+                  ...
+ 
+[browser] Image with src "http://localhost:3001/logo/kower-logo.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[browser] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="pl" className="h-full scr...">
+                          <body
+                            className="flex min-h-full flex-col"
+-                           __processed_9b7d8de7-5e03-4a55-a960-1b2f378c7f9c__="true"
+-                           bis_register="W3sibWFzdGVyIjp0cnVlLCJleHRlbnNpb25JZCI6ImVwcGlvY2VtaG1ubGJoanBsY2drb2ZjaWll..."
+                          >
+                  ...
+ 
+[browser] Image with src "http://localhost:3001/logo/kower-logo.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[browser] Image with src "http://localhost:3001/logo/kower-logo.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/logo/kower-logo.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="pl" className="h-full scr...">
+                          <body
+                            className="flex min-h-full flex-col"
+-                           __processed_60e5f935-a854-4435-a3dc-2c755dac8efd__="true"
+-                           bis_register="W3sibWFzdGVyIjp0cnVlLCJleHRlbnNpb25JZCI6ImVwcGlvY2VtaG1ubGJoanBsY2drb2ZjaWll..."
+                          >
+                  ...
+ 
+[browser] Image with src "http://localhost:3001/logo/kower-logo.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="pl" className="h-full scr...">
+                          <body
+                            className="flex min-h-full flex-col"
+-                           __processed_43bedbde-696b-4e8b-89f9-8377d07e3459__="true"
+-                           bis_register="W3sibWFzdGVyIjp0cnVlLCJleHRlbnNpb25JZCI6ImVwcGlvY2VtaG1ubGJoanBsY2drb2ZjaWll..."
+                          >
+                  ...
+ 
+[browser] Image with src "http://localhost:3001/logo/kower-logo.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="pl" className="h-full scr...">
+                          <body
+                            className="flex min-h-full flex-col"
+-                           __processed_9275f5f1-1df3-4096-9247-16d95278463a__="true"
+-                           bis_register="W3sibWFzdGVyIjp0cnVlLCJleHRlbnNpb25JZCI6ImVwcGlvY2VtaG1ubGJoanBsY2drb2ZjaWll..."
+                          >
+                  ...
+ 
+[browser] Image with src "http://localhost:3001/logo/kower-logo.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="pl" className="h-full scr...">
+                          <body
+                            className="flex min-h-full flex-col"
+-                           __processed_83f9848c-5ee8-4546-8854-76b00ed4b061__="true"
+-                           bis_register="W3sibWFzdGVyIjp0cnVlLCJleHRlbnNpb25JZCI6ImVwcGlvY2VtaG1ubGJoanBsY2drb2ZjaWll..."
+                          >
+                  ...
+ 
+[browser] Image with src "http://localhost:3001/logo/kower-logo.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="pl" className="h-full scr...">
+                          <body
+                            className="flex min-h-full flex-col"
+-                           __processed_ba07f9f9-e683-4b63-8224-cc61b00b27fd__="true"
+-                           bis_register="W3sibWFzdGVyIjp0cnVlLCJleHRlbnNpb25JZCI6ImVwcGlvY2VtaG1ubGJoanBsY2drb2ZjaWll..."
+                          >
+                  ...
+ 
+[browser] Image with src "http://localhost:3001/logo/kower-logo.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/egger.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/pfleiderer.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/swiss-krono.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/kronospan.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/cleaf.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/blum.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/hettich.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/egger.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/pfleiderer.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/swiss-krono.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/kronospan.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/cleaf.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/blum.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/hettich.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="pl" className="h-full scr...">
+                          <body
+                            className="flex min-h-full flex-col"
+-                           __processed_aa827d2a-a6a6-4dc9-946e-c42402c425a1__="true"
+-                           bis_register="W3sibWFzdGVyIjp0cnVlLCJleHRlbnNpb25JZCI6ImVwcGlvY2VtaG1ubGJoanBsY2drb2ZjaWll..."
+                          >
+                  ...
+ 
+[browser] Image with src "http://localhost:3001/producer-logos/egger.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/pfleiderer.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/swiss-krono.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/kronospan.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/cleaf.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/blum.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/hettich.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/logo/kower-logo.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/egger.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/pfleiderer.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/swiss-krono.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/kronospan.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/cleaf.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/blum.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/hettich.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/egger.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/pfleiderer.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/swiss-krono.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/kronospan.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/cleaf.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/blum.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/hettich.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="pl" className="h-full scr...">
+                          <body
+                            className="flex min-h-full flex-col"
+-                           __processed_8f77f8cb-298c-4836-a8c4-757d284c9f8f__="true"
+-                           bis_register="W3sibWFzdGVyIjp0cnVlLCJleHRlbnNpb25JZCI6ImVwcGlvY2VtaG1ubGJoanBsY2drb2ZjaWll..."
+                          >
+                  ...
+ 
+[browser] Image with src "http://localhost:3001/producer-logos/egger.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/pfleiderer.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/swiss-krono.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/kronospan.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/cleaf.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/blum.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/hettich.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/logo/kower-logo.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/egger.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/pfleiderer.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/swiss-krono.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/kronospan.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/cleaf.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/blum.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/hettich.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/egger.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/pfleiderer.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/swiss-krono.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/kronospan.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/cleaf.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/blum.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/hettich.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/egger.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/pfleiderer.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/swiss-krono.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/kronospan.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/cleaf.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/blum.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/hettich.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/egger.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/pfleiderer.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/swiss-krono.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/kronospan.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/cleaf.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/blum.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/hettich.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="pl" className="h-full scr...">
+                          <body
+                            className="flex min-h-full flex-col"
+-                           __processed_4b526e2a-20bb-42ab-956c-1cc1ac16eb53__="true"
+-                           bis_register="W3sibWFzdGVyIjp0cnVlLCJleHRlbnNpb25JZCI6ImVwcGlvY2VtaG1ubGJoanBsY2drb2ZjaWll..."
+                          >
+                  ...
+ 
+[browser] Image with src "http://localhost:3001/producer-logos/egger.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/pfleiderer.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/swiss-krono.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/kronospan.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/cleaf.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/blum.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/hettich.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/logo/kower-logo.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[browser] ./components/ContactForm.tsx:331:3
+Expression expected
+  329 |     </form>
+  330 |   );
+> 331 |   );
+      |   ^
+  332 | }
+  333 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./components/ContactForm.tsx
+    ./components/MarketingPageView.tsx
+    ./app/[...slug]/page.tsx 
+[browser] ./components/ContactForm.tsx:331:3
+Expression expected
+  329 |     </form>
+  330 |   );
+> 331 |   );
+      |   ^
+  332 | }
+  333 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./components/ContactForm.tsx
+    ./components/MarketingPageView.tsx
+    ./app/[...slug]/page.tsx 
+[browser] ./components/ContactForm.tsx:331:3
+Expression expected
+  329 |     </form>
+  330 |   );
+> 331 |   );
+      |   ^
+  332 | }
+  333 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./components/ContactForm.tsx
+    ./components/MarketingPageView.tsx
+    ./app/[...slug]/page.tsx 
+[browser] ./components/ContactForm.tsx:331:3
+Expression expected
+  329 |     </form>
+  330 |   );
+> 331 |   );
+      |   ^
+  332 | }
+  333 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./components/ContactForm.tsx
+    ./components/MarketingPageView.tsx
+    ./app/[...slug]/page.tsx 
+[browser] ./components/ContactForm.tsx:331:3
+Expression expected
+  329 |     </form>
+  330 |   );
+> 331 |   );
+      |   ^
+  332 | }
+  333 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./components/ContactForm.tsx
+    ./components/MarketingPageView.tsx
+    ./app/[...slug]/page.tsx 
+[browser] Uncaught Error: ./components/ContactForm.tsx:331:3
+Expression expected
+  329 |     </form>
+  330 |   );
+> 331 |   );
+      |   ^
+  332 | }
+  333 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./components/ContactForm.tsx
+    ./components/MarketingPageView.tsx
+    ./app/[...slug]/page.tsx
+
+
+    at <unknown> (Error: ./components/ContactForm.tsx:331:3)
+    at <unknown> (Error: (./components/ContactForm.tsx:331:3)
+[browser] Uncaught Error: ./components/ContactForm.tsx:331:3
+Expression expected
+  329 |     </form>
+  330 |   );
+> 331 |   );
+      |   ^
+  332 | }
+  333 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./components/ContactForm.tsx
+    ./components/MarketingPageView.tsx
+    ./app/[...slug]/page.tsx
+
+
+    at <unknown> (Error: ./components/ContactForm.tsx:331:3)
+    at <unknown> (Error: (./components/ContactForm.tsx:331:3)
+[browser] ./components/ContactForm.tsx:331:3
+Expression expected
+  329 |     </form>
+  330 |   );
+> 331 |   );
+      |   ^
+  332 | }
+  333 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./components/ContactForm.tsx
+    ./components/MarketingPageView.tsx
+    ./app/[...slug]/page.tsx 
+[browser] ./components/ContactForm.tsx:331:3
+Expression expected
+  329 |     </form>
+  330 |   );
+> 331 |   );
+      |   ^
+  332 | }
+  333 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./components/ContactForm.tsx
+    ./components/MarketingPageView.tsx
+    ./app/[...slug]/page.tsx 
+[browser] ./components/ContactForm.tsx:331:3
+Expression expected
+  329 |     </form>
+  330 |   );
+> 331 |   );
+      |   ^
+  332 | }
+  333 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./components/ContactForm.tsx
+    ./components/MarketingPageView.tsx
+    ./app/[...slug]/page.tsx 
+[browser] ./components/ContactForm.tsx:331:3
+Expression expected
+  329 |     </form>
+  330 |   );
+> 331 |   );
+      |   ^
+  332 | }
+  333 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./components/ContactForm.tsx
+    ./components/MarketingPageView.tsx
+    ./app/[...slug]/page.tsx 
+[browser] Uncaught Error: ./components/ContactForm.tsx:331:3
+Expression expected
+  329 |     </form>
+  330 |   );
+> 331 |   );
+      |   ^
+  332 | }
+  333 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./components/ContactForm.tsx
+    ./components/MarketingPageView.tsx
+    ./app/[...slug]/page.tsx
+
+
+    at <unknown> (Error: ./components/ContactForm.tsx:331:3)
+    at <unknown> (Error: (./components/ContactForm.tsx:331:3)
+[browser] ./components/ContactForm.tsx:331:3
+Expression expected
+  329 |     </form>
+  330 |   );
+> 331 |   );
+      |   ^
+  332 | }
+  333 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./components/ContactForm.tsx
+    ./components/MarketingPageView.tsx
+    ./app/[...slug]/page.tsx 
+[browser] ./components/ContactForm.tsx:331:3
+Expression expected
+  329 |     </form>
+  330 |   );
+> 331 |   );
+      |   ^
+  332 | }
+  333 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./components/ContactForm.tsx
+    ./components/MarketingPageView.tsx
+    ./app/[...slug]/page.tsx 
+[browser] ./components/ContactForm.tsx:331:3
+Expression expected
+  329 |     </form>
+  330 |   );
+> 331 |   );
+      |   ^
+  332 | }
+  333 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./components/ContactForm.tsx
+    ./components/MarketingPageView.tsx
+    ./app/[...slug]/page.tsx 
+[browser] ./components/ContactForm.tsx:331:3
+Expression expected
+  329 |     </form>
+  330 |   );
+> 331 |   );
+      |   ^
+  332 | }
+  333 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./components/ContactForm.tsx
+    ./components/MarketingPageView.tsx
+    ./app/[...slug]/page.tsx 
+[browser] Uncaught Error: ./components/ContactForm.tsx:331:3
+Expression expected
+  329 |     </form>
+  330 |   );
+> 331 |   );
+      |   ^
+  332 | }
+  333 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./components/ContactForm.tsx
+    ./components/MarketingPageView.tsx
+    ./app/[...slug]/page.tsx
+
+
+    at <unknown> (Error: ./components/ContactForm.tsx:331:3)
+    at <unknown> (Error: (./components/ContactForm.tsx:331:3)
+[browser] ./components/ContactForm.tsx:331:3
+Expression expected
+  329 |     </form>
+  330 |   );
+> 331 |   );
+      |   ^
+  332 | }
+  333 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./components/ContactForm.tsx
+    ./components/MarketingPageView.tsx
+    ./app/[...slug]/page.tsx 
+[browser] ./components/ContactForm.tsx:331:3
+Expression expected
+  329 |     </form>
+  330 |   );
+> 331 |   );
+      |   ^
+  332 | }
+  333 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./components/ContactForm.tsx
+    ./components/MarketingPageView.tsx
+    ./app/[...slug]/page.tsx 
+[browser] ./components/ContactForm.tsx:331:3
+Expression expected
+  329 |     </form>
+  330 |   );
+> 331 |   );
+      |   ^
+  332 | }
+  333 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./components/ContactForm.tsx
+    ./components/MarketingPageView.tsx
+    ./app/[...slug]/page.tsx 
+[browser] Uncaught Error: ./components/ContactForm.tsx:331:3
+Expression expected
+  329 |     </form>
+  330 |   );
+> 331 |   );
+      |   ^
+  332 | }
+  333 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./components/ContactForm.tsx
+    ./components/MarketingPageView.tsx
+    ./app/[...slug]/page.tsx
+
+
+    at <unknown> (Error: ./components/ContactForm.tsx:331:3)
+    at <unknown> (Error: (./components/ContactForm.tsx:331:3)
+[browser] ./components/ContactForm.tsx:331:3
+Expression expected
+  329 |     </form>
+  330 |   );
+> 331 |   );
+      |   ^
+  332 | }
+  333 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./components/ContactForm.tsx
+    ./components/MarketingPageView.tsx
+    ./app/[...slug]/page.tsx 
+[browser] ./components/ContactForm.tsx:331:3
+Expression expected
+  329 |     </form>
+  330 |   );
+> 331 |   );
+      |   ^
+  332 | }
+  333 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./components/ContactForm.tsx
+    ./components/MarketingPageView.tsx
+    ./app/[...slug]/page.tsx 
+[browser] ./components/ContactForm.tsx:331:3
+Expression expected
+  329 |     </form>
+  330 |   );
+> 331 |   );
+      |   ^
+  332 | }
+  333 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./components/ContactForm.tsx
+    ./components/MarketingPageView.tsx
+    ./app/[...slug]/page.tsx 
+[browser] ./components/ContactForm.tsx:331:3
+Expression expected
+  329 |     </form>
+  330 |   );
+> 331 |   );
+      |   ^
+  332 | }
+  333 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./components/ContactForm.tsx
+    ./components/MarketingPageView.tsx
+    ./app/[...slug]/page.tsx 
+[browser] Uncaught Error: ./components/ContactForm.tsx:331:3
+Expression expected
+  329 |     </form>
+  330 |   );
+> 331 |   );
+      |   ^
+  332 | }
+  333 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./components/ContactForm.tsx
+    ./components/MarketingPageView.tsx
+    ./app/[...slug]/page.tsx
+
+
+    at <unknown> (Error: ./components/ContactForm.tsx:331:3)
+    at <unknown> (Error: (./components/ContactForm.tsx:331:3)
+[browser] ./components/ContactForm.tsx:331:3
+Expression expected
+  329 |     </form>
+  330 |   );
+> 331 |   );
+      |   ^
+  332 | }
+  333 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./components/ContactForm.tsx
+    ./components/MarketingPageView.tsx
+    ./app/[...slug]/page.tsx 
+[browser] ./components/ContactForm.tsx:331:3
+Expression expected
+  329 |     </form>
+  330 |   );
+> 331 |   );
+      |   ^
+  332 | }
+  333 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./components/ContactForm.tsx
+    ./components/MarketingPageView.tsx
+    ./app/[...slug]/page.tsx 
+[browser] Uncaught Error: ./components/ContactForm.tsx:331:3
+Expression expected
+  329 |     </form>
+  330 |   );
+> 331 |   );
+      |   ^
+  332 | }
+  333 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./components/ContactForm.tsx
+    ./components/MarketingPageView.tsx
+    ./app/[...slug]/page.tsx
+
+
+    at <unknown> (Error: ./components/ContactForm.tsx:331:3)
+    at <unknown> (Error: (./components/ContactForm.tsx:331:3)
+[browser] ./components/ContactForm.tsx:331:3
+Expression expected
+  329 |     </form>
+  330 |   );
+> 331 |   );
+      |   ^
+  332 | }
+  333 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./components/ContactForm.tsx
+    ./components/MarketingPageView.tsx
+    ./app/[...slug]/page.tsx 
+[browser] ./components/ContactForm.tsx:331:3
+Expression expected
+  329 |     </form>
+  330 |   );
+> 331 |   );
+      |   ^
+  332 | }
+  333 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./components/ContactForm.tsx
+    ./components/MarketingPageView.tsx
+    ./app/[...slug]/page.tsx 
+[browser] Uncaught Error: ./components/ContactForm.tsx:331:3
+Expression expected
+  329 |     </form>
+  330 |   );
+> 331 |   );
+      |   ^
+  332 | }
+  333 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./components/ContactForm.tsx
+    ./components/MarketingPageView.tsx
+    ./app/[...slug]/page.tsx
+
+
+    at <unknown> (Error: ./components/ContactForm.tsx:331:3)
+    at <unknown> (Error: (./components/ContactForm.tsx:331:3)
+[browser] ./components/ContactForm.tsx:331:3
+Expression expected
+  329 |     </form>
+  330 |   );
+> 331 |   );
+      |   ^
+  332 | }
+  333 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./components/ContactForm.tsx
+    ./components/MarketingPageView.tsx
+    ./app/[...slug]/page.tsx 
+[browser] ./components/ContactForm.tsx:331:3
+Expression expected
+  329 |     </form>
+  330 |   );
+> 331 |   );
+      |   ^
+  332 | }
+  333 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./components/ContactForm.tsx
+    ./components/MarketingPageView.tsx
+    ./app/[...slug]/page.tsx 
+[browser] Uncaught Error: ./components/ContactForm.tsx:331:3
+Expression expected
+  329 |     </form>
+  330 |   );
+> 331 |   );
+      |   ^
+  332 | }
+  333 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./components/ContactForm.tsx
+    ./components/MarketingPageView.tsx
+    ./app/[...slug]/page.tsx
+
+
+    at <unknown> (Error: ./components/ContactForm.tsx:331:3)
+    at <unknown> (Error: (./components/ContactForm.tsx:331:3)
+[browser] ./components/ContactForm.tsx:331:3
+Expression expected
+  329 |     </form>
+  330 |   );
+> 331 |   );
+      |   ^
+  332 | }
+  333 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./components/ContactForm.tsx
+    ./components/MarketingPageView.tsx
+    ./app/[...slug]/page.tsx 
+[browser] ./components/ContactForm.tsx:331:3
+Expression expected
+  329 |     </form>
+  330 |   );
+> 331 |   );
+      |   ^
+  332 | }
+  333 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./components/ContactForm.tsx
+    ./components/MarketingPageView.tsx
+    ./app/[...slug]/page.tsx 
+[browser] Uncaught Error: ./components/ContactForm.tsx:331:3
+Expression expected
+  329 |     </form>
+  330 |   );
+> 331 |   );
+      |   ^
+  332 | }
+  333 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./components/ContactForm.tsx
+    ./components/MarketingPageView.tsx
+    ./app/[...slug]/page.tsx
+
+
+    at <unknown> (Error: ./components/ContactForm.tsx:331:3)
+    at <unknown> (Error: (./components/ContactForm.tsx:331:3)
+[browser] ./components/ContactForm.tsx:331:3
+Expression expected
+  329 |     </form>
+  330 |   );
+> 331 |   );
+      |   ^
+  332 | }
+  333 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./components/ContactForm.tsx
+    ./components/MarketingPageView.tsx
+    ./app/[...slug]/page.tsx 
+[browser] ./components/ContactForm.tsx:331:3
+Expression expected
+  329 |     </form>
+  330 |   );
+> 331 |   );
+      |   ^
+  332 | }
+  333 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./components/ContactForm.tsx
+    ./components/MarketingPageView.tsx
+    ./app/[...slug]/page.tsx 
+[browser] Uncaught Error: ./components/ContactForm.tsx:331:3
+Expression expected
+  329 |     </form>
+  330 |   );
+> 331 |   );
+      |   ^
+  332 | }
+  333 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./components/ContactForm.tsx
+    ./components/MarketingPageView.tsx
+    ./app/[...slug]/page.tsx
+
+
+    at <unknown> (Error: ./components/ContactForm.tsx:331:3)
+    at <unknown> (Error: (./components/ContactForm.tsx:331:3)
+[browser] ./components/ContactForm.tsx:331:3
+Expression expected
+  329 |     </form>
+  330 |   );
+> 331 |   );
+      |   ^
+  332 | }
+  333 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./components/ContactForm.tsx
+    ./components/MarketingPageView.tsx
+    ./app/[...slug]/page.tsx 
+[browser] ./components/ContactForm.tsx:331:3
+Expression expected
+  329 |     </form>
+  330 |   );
+> 331 |   );
+      |   ^
+  332 | }
+  333 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./components/ContactForm.tsx
+    ./components/MarketingPageView.tsx
+    ./app/[...slug]/page.tsx 
+[browser] Uncaught Error: ./components/ContactForm.tsx:329:1
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+  327 |         </div>
+  328 |   );
+> 329 | }
+      | ^
+  330 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./components/ContactForm.tsx
+    ./components/MarketingPageView.tsx
+    ./app/[...slug]/page.tsx
+
+
+    at <unknown> (Error: ./components/ContactForm.tsx:329:1)
+    at <unknown> (Error: (./components/ContactForm.tsx:329:1)
+[browser] Uncaught Error: ./components/ContactForm.tsx:329:1
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+  327 |         </div>
+  328 |   );
+> 329 | }
+      | ^
+  330 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./components/ContactForm.tsx
+    ./components/MarketingPageView.tsx
+    ./app/[...slug]/page.tsx
+
+
+    at <unknown> (Error: ./components/ContactForm.tsx:329:1)
+    at <unknown> (Error: (./components/ContactForm.tsx:329:1)
+[browser] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="pl" className="h-full scr...">
+                          <body
+                            className="flex min-h-full flex-col"
+-                           __processed_5a9950a8-dcb6-4631-970c-3f40e9ffc845__="true"
+-                           bis_register="W3sibWFzdGVyIjp0cnVlLCJleHRlbnNpb25JZCI6ImVwcGlvY2VtaG1ubGJoanBsY2drb2ZjaWll..."
+                          >
+                            <div className="flex min-h...">
+                              ...
+                                <Home>
+                                  <div id="top" className="min-h-scre...">
+                                    <Header>
+                                    <main className="pt-[92px] ...">
+                                      <Hero>
+                                      <section>
+                                      <ProjectsCarousel>
+                                      <section>
+                                      <OfferQuickNav>
+                                      <section id="dlaczego-w..." aria-labelledby="why-us-title" ...>
+                                        <div
+                                          className="mx-auto max-w-[1180px] px-5 sm:px-8 lg:px-0"
+-                                         bis_skin_checked="1"
+                                        >
+                                          <div
+                                            className="mb-12 text-center"
+-                                           bis_skin_checked="1"
+                                          >
+                                          <div
+                                            className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3"
+-                                           bis_skin_checked="1"
+                                          >
+                                            <div
+                                              className="flex gap-4"
+-                                             bis_skin_checked="1"
+                                            >
+                                              <div
+                                                className="flex h-10 w-10 shrink-0 items-center justify-center rounded..."
+-                                               bis_skin_checked="1"
+                                              >
+                                              <div
+-                                               bis_skin_checked="1"
+                                              >
+                                            <div
+                                              className="flex gap-4"
+-                                             bis_skin_checked="1"
+                                            >
+                                              <div
+                                                className="flex h-10 w-10 shrink-0 items-center justify-center rounded..."
+-                                               bis_skin_checked="1"
+                                              >
+                                              <div
+-                                               bis_skin_checked="1"
+                                              >
+                                            <div
+                                              className="flex gap-4"
+-                                             bis_skin_checked="1"
+                                            >
+                                              <div
+                                                className="flex h-10 w-10 shrink-0 items-center justify-center rounded..."
+-                                               bis_skin_checked="1"
+                                              >
+                                              <div
+-                                               bis_skin_checked="1"
+                                              >
+                                            <div
+                                              className="flex gap-4"
+-                                             bis_skin_checked="1"
+                                            >
+                                              <div
+                                                className="flex h-10 w-10 shrink-0 items-center justify-center rounded..."
+-                                               bis_skin_checked="1"
+                                              >
+                                              <div
+-                                               bis_skin_checked="1"
+                                              >
+                                            <div
+                                              className="flex gap-4"
+-                                             bis_skin_checked="1"
+                                            >
+                                              <div
+                                                className="flex h-10 w-10 shrink-0 items-center justify-center rounded..."
+-                                               bis_skin_checked="1"
+                                              >
+                                              <div
+-                                               bis_skin_checked="1"
+                                              >
+                                            <div
+                                              className="flex gap-4"
+-                                             bis_skin_checked="1"
+                                            >
+                                              <div
+                                                className="flex h-10 w-10 shrink-0 items-center justify-center rounded..."
+-                                               bis_skin_checked="1"
+                                              >
+                                              <div
+-                                               bis_skin_checked="1"
+                                              >
+                                      <section id="materialy" aria-labelledby="detail-title" className="grid min-h...">
+                                        <div
+                                          className="relative z-10 flex items-center px-5 py-16 sm:px-8 lg:justify-end..."
+-                                         bis_skin_checked="1"
+                                        >
+                                          <Reveal className="max-w-[285px]">
+                                            <motion.div className="max-w-[285px]" initial={{opacity:0,y:18}} ...>
+                                              <div
+                                                className="max-w-[285px]"
+                                                style={{opacity:0,transform:"translateY..."}}
+                                                ref={function useMotionRef.useCallback}
+-                                               bis_skin_checked="1"
+                                              >
+                                        <div
+                                          className="relative min-h-[330px] overflow-hidden lg:min-h-[430px]"
+-                                         bis_skin_checked="1"
+                                        >
+                                          <img>
+                                          <div
+                                            className="absolute inset-0 bg-[linear-gradient(90deg,rgba(244,239,230,0.1..."
+-                                           bis_skin_checked="1"
+                                          >
+                                          <div
+                                            className="absolute left-8 top-9 hidden h-24 w-24 items-center justify-cen..."
+-                                           bis_skin_checked="1"
+                                          >
+                                      <section id="proces" aria-labelledby="process-title" className="bg-[#f6f2e...">
+                                        <div
+                                          className="mx-auto max-w-[1180px] px-5 sm:px-8 lg:px-0"
+-                                         bis_skin_checked="1"
+                                        >
+                                          <Reveal className="mb-10 flex...">
+                                            <motion.div className="mb-10 flex..." initial={{opacity:0,y:18}} ...>
+                                              <div
+                                                className="mb-10 flex flex-col justify-between gap-5 md:flex-row md:it..."
+                                                style={{opacity:0,transform:"translateY..."}}
+                                                ref={function useMotionRef.useCallback}
+-                                               bis_skin_checked="1"
+                                              >
+                                                <div
+-                                                 bis_skin_checked="1"
+                                                >
+                                                ...
+                                          <div
+                                            className="grid border-t border-[#d8d0c4] grid-cols-1 sm:grid-cols-2 lg:gr..."
+-                                           bis_skin_checked="1"
+                                          >
+                                            <Reveal className={"min-h-[1..."}>
+                                              <motion.div className={"min-h-[1..."} initial={{opacity:0,y:18}} ...>
+                                                <div
+                                                  className={"min-h-[190px] border-b border-[#d8d0c4] py-7 lg:border-..."}
+                                                  style={{opacity:0,transform:"translateY..."}}
+                                                  ref={function useMotionRef.useCallback}
+-                                                 bis_skin_checked="1"
+                                                >
+                                            <Reveal className="min-h-[190...">
+                                              <motion.div className="min-h-[190..." initial={{opacity:0,y:18}} ...>
+                                                <div
+                                                  className="min-h-[190px] border-b border-[#d8d0c4] py-7 lg:border-b-..."
+                                                  style={{opacity:0,transform:"translateY..."}}
+                                                  ref={function useMotionRef.useCallback}
+-                                                 bis_skin_checked="1"
+                                                >
+                                            <Reveal className={"min-h-[1..."}>
+                                              <motion.div className={"min-h-[1..."} initial={{opacity:0,y:18}} ...>
+                                                <div
+                                                  className={"min-h-[190px] border-b border-[#d8d0c4] py-7 lg:border-..."}
+                                                  style={{opacity:0,transform:"translateY..."}}
+                                                  ref={function useMotionRef.useCallback}
+-                                                 bis_skin_checked="1"
+                                                >
+                                            <Reveal className="min-h-[190...">
+                                              <motion.div className="min-h-[190..." initial={{opacity:0,y:18}} ...>
+                                                <div
+                                                  className="min-h-[190px] border-b border-[#d8d0c4] py-7 lg:border-b-..."
+                                                  style={{opacity:0,transform:"translateY..."}}
+                                                  ref={function useMotionRef.useCallback}
+-                                                 bis_skin_checked="1"
+                                                >
+                                            <Reveal className={"min-h-[1..."}>
+                                              <motion.div className={"min-h-[1..."} initial={{opacity:0,y:18}} ...>
+                                                <div
+                                                  className={"min-h-[190px] border-b border-[#d8d0c4] py-7 lg:border-..."}
+                                                  style={{opacity:0,transform:"translateY..."}}
+                                                  ref={function useMotionRef.useCallback}
+-                                                 bis_skin_checked="1"
+                                                >
+                                      <section className="bg-[#f4efe...">
+                                        <div
+                                          className="mx-auto max-w-[1180px] px-5 sm:px-8 lg:px-0"
+-                                         bis_skin_checked="1"
+                                        >
+                                          <div
+                                            className="grid gap-10 lg:grid-cols-2 items-center"
+-                                           bis_skin_checked="1"
+                                          >
+                                            <div
+-                                             bis_skin_checked="1"
+                                            >
+                                            <div
+                                              className="relative min-h-[300px] overflow-hidden rounded-2xl border bor..."
+-                                             bis_skin_checked="1"
+                                            >
+                                      <section id="faq" className="bg-[#fbfaf...">
+                                        <div
+                                          className="mx-auto max-w-[1180px] px-5 sm:px-8 lg:px-0"
+-                                         bis_skin_checked="1"
+                                        >
+                                          <div
+                                            className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr]"
+-                                           bis_skin_checked="1"
+                                          >
+                                            <div
+-                                             bis_skin_checked="1"
+                                            >
+                                            ...
+                                              <AccordionCollectionSlot.Slot ref={function}>
+                                                <AccordionCollectionSlot.SlotClone ref={function}>
+                                                  <Primitive.div data-slot="accordion" className="flex w-ful..." ...>
+                                                    <div
+                                                      data-slot="accordion"
+                                                      className="flex w-full flex-col space-y-3"
+                                                      data-orientation="vertical"
+                                                      onKeyDown={function handleEvent}
+                                                      ref={function}
+-                                                     bis_skin_checked="1"
+                                                    >
+                                                      ...
+                                                        <CollapsibleProvider scope={{...}} disabled={undefined} ...>
+                                                          <Primitive.div data-state="closed" data-disabled={undefined} ...>
+                                                            <div
+                                                              data-state="closed"
+                                                              data-disabled={undefined}
+                                                              data-orientation="vertical"
+                                                              data-slot="accordion-item"
+                                                              className="not-last:border-b border border-[#dfe3d9] bg-..."
+                                                              ref={null}
+-                                                             bis_skin_checked="1"
+                                                            >
+                                                              <AccordionTrigger>
+                                                              ...
+                                                                <Presence present={false}>
+                                                                  <Primitive.div data-state="closed" ...>
+                                                                    <div
+                                                                      data-state="closed"
+                                                                      data-disabled={undefined}
+                                                                      id="radix-_R_2daindlb_"
+                                                                      hidden={true}
+                                                                      role="region"
+                                                                      aria-labelledby="radix-_R_daindlb_"
+                                                                      data-orientation="vertical"
+                                                                      data-slot="accordion-content"
+                                                                      className="overflow-hidden text-sm data-open:ani..."
+                                                                      style={{--radix-collapsible-content-height:undefined, ...}}
+                                                                      ref={function}
+-                                                                     bis_skin_checked="1"
+                                                                    >
+                                                      ...
+                                                        <CollapsibleProvider scope={{...}} disabled={undefined} ...>
+                                                          <Primitive.div data-state="closed" data-disabled={undefined} ...>
+                                                            <div
+                                                              data-state="closed"
+                                                              data-disabled={undefined}
+                                                              data-orientation="vertical"
+                                                              data-slot="accordion-item"
+                                                              className="not-last:border-b border border-[#dfe3d9] bg-..."
+                                                              ref={null}
+-                                                             bis_skin_checked="1"
+                                                            >
+                                                              <AccordionTrigger>
+                                                              ...
+                                                                <Presence present={false}>
+                                                                  <Primitive.div data-state="closed" ...>
+                                                                    <div
+                                                                      data-state="closed"
+                                                                      data-disabled={undefined}
+                                                                      id="radix-_R_2laindlb_"
+                                                                      hidden={true}
+                                                                      role="region"
+                                                                      aria-labelledby="radix-_R_laindlb_"
+                                                                      data-orientation="vertical"
+                                                                      data-slot="accordion-content"
+                                                                      className="overflow-hidden text-sm data-open:ani..."
+                                                                      style={{--radix-collapsible-content-height:undefined, ...}}
+                                                                      ref={function}
+-                                                                     bis_skin_checked="1"
+                                                                    >
+                                                      ...
+                                                        <CollapsibleProvider scope={{...}} disabled={undefined} ...>
+                                                          <Primitive.div data-state="closed" data-disabled={undefined} ...>
+                                                            <div
+                                                              data-state="closed"
+                                                              data-disabled={undefined}
+                                                              data-orientation="vertical"
+                                                              data-slot="accordion-item"
+                                                              className="not-last:border-b border border-[#dfe3d9] bg-..."
+                                                              ref={null}
+-                                                             bis_skin_checked="1"
+                                                            >
+                                                              <AccordionTrigger>
+                                                              ...
+                                                                <Presence present={false}>
+                                                                  <Primitive.div data-state="closed" ...>
+                                                                    <div
+                                                                      data-state="closed"
+                                                                      data-disabled={undefined}
+                                                                      id="radix-_R_2taindlb_"
+                                                                      hidden={true}
+                                                                      role="region"
+                                                                      aria-labelledby="radix-_R_taindlb_"
+                                                                      data-orientation="vertical"
+                                                                      data-slot="accordion-content"
+                                                                      className="overflow-hidden text-sm data-open:ani..."
+                                                                      style={{--radix-collapsible-content-height:undefined, ...}}
+                                                                      ref={function}
+-                                                                     bis_skin_checked="1"
+                                                                    >
+                                                      ...
+                                                        <CollapsibleProvider scope={{...}} disabled={undefined} ...>
+                                                          <Primitive.div data-state="closed" data-disabled={undefined} ...>
+                                                            <div
+                                                              data-state="closed"
+                                                              data-disabled={undefined}
+                                                              data-orientation="vertical"
+                                                              data-slot="accordion-item"
+                                                              className="not-last:border-b border border-[#dfe3d9] bg-..."
+                                                              ref={null}
+-                                                             bis_skin_checked="1"
+                                                            >
+                                                              <AccordionTrigger>
+                                                              ...
+                                                                <Presence present={false}>
+                                                                  <Primitive.div data-state="closed" ...>
+                                                                    <div
+                                                                      data-state="closed"
+                                                                      data-disabled={undefined}
+                                                                      id="radix-_R_35aindlb_"
+                                                                      hidden={true}
+                                                                      role="region"
+                                                                      aria-labelledby="radix-_R_15aindlb_"
+                                                                      data-orientation="vertical"
+                                                                      data-slot="accordion-content"
+                                                                      className="overflow-hidden text-sm data-open:ani..."
+                                                                      style={{--radix-collapsible-content-height:undefined, ...}}
+                                                                      ref={function}
+-                                                                     bis_skin_checked="1"
+                                                                    >
+                                                      ...
+                                                        <CollapsibleProvider scope={{...}} disabled={undefined} ...>
+                                                          <Primitive.div data-state="closed" data-disabled={undefined} ...>
+                                                            <div
+                                                              data-state="closed"
+                                                              data-disabled={undefined}
+                                                              data-orientation="vertical"
+                                                              data-slot="accordion-item"
+                                                              className="not-last:border-b border border-[#dfe3d9] bg-..."
+                                                              ref={null}
+-                                                             bis_skin_checked="1"
+                                                            >
+                                                              <AccordionTrigger>
+                                                              ...
+                                                                <Presence present={false}>
+                                                                  <Primitive.div data-state="closed" ...>
+                                                                    <div
+                                                                      data-state="closed"
+                                                                      data-disabled={undefined}
+                                                                      id="radix-_R_3daindlb_"
+                                                                      hidden={true}
+                                                                      role="region"
+                                                                      aria-labelledby="radix-_R_1daindlb_"
+                                                                      data-orientation="vertical"
+                                                                      data-slot="accordion-content"
+                                                                      className="overflow-hidden text-sm data-open:ani..."
+                                                                      style={{--radix-collapsible-content-height:undefined, ...}}
+                                                                      ref={function}
+-                                                                     bis_skin_checked="1"
+                                                                    >
+                                                      ...
+                                                        <CollapsibleProvider scope={{...}} disabled={undefined} ...>
+                                                          <Primitive.div data-state="closed" data-disabled={undefined} ...>
+                                                            <div
+                                                              data-state="closed"
+                                                              data-disabled={undefined}
+                                                              data-orientation="vertical"
+                                                              data-slot="accordion-item"
+                                                              className="not-last:border-b border border-[#dfe3d9] bg-..."
+                                                              ref={null}
+-                                                             bis_skin_checked="1"
+                                                            >
+                                                              <AccordionTrigger>
+                                                              ...
+                                                                <Presence present={false}>
+                                                                  <Primitive.div data-state="closed" ...>
+                                                                    <div
+                                                                      data-state="closed"
+                                                                      data-disabled={undefined}
+                                                                      id="radix-_R_3laindlb_"
+                                                                      hidden={true}
+                                                                      role="region"
+                                                                      aria-labelledby="radix-_R_1laindlb_"
+                                                                      data-orientation="vertical"
+                                                                      data-slot="accordion-content"
+                                                                      className="overflow-hidden text-sm data-open:ani..."
+                                                                      style={{--radix-collapsible-content-height:undefined, ...}}
+                                                                      ref={function}
+-                                                                     bis_skin_checked="1"
+                                                                    >
+                                      <section id="kontakt" aria-labelledby="cta-title" className="bg-[#1f211...">
+                                        <Reveal className="mx-auto fl...">
+                                          <motion.div className="mx-auto fl..." initial={{opacity:0,y:18}} ...>
+                                            <div
+                                              className="mx-auto flex max-w-[1180px] flex-col items-start justify-betw..."
+                                              style={{opacity:0,transform:"translateY..."}}
+                                              ref={function useMotionRef.useCallback}
+-                                             bis_skin_checked="1"
+                                            >
+                                              <div
+-                                               bis_skin_checked="1"
+                                              >
+                                              ...
+                              <SiteFooter>
+                                <footer className="border-t b...">
+                                  <div
+                                    className="mx-auto grid max-w-[1180px] gap-10 px-5 py-14 md:grid-cols-[1.1fr_2fr] ..."
+-                                   bis_skin_checked="1"
+                                  >
+                                    <div
+-                                     bis_skin_checked="1"
+                                    >
+                                      <LinkComponent>
+                                      <p>
+                                      <div
+                                        className="mt-8 space-y-2 text-sm text-[#2b2d28]"
+-                                       bis_skin_checked="1"
+                                      >
+                                      <div
+                                        className="mt-6 flex flex-wrap gap-3"
+-                                       bis_skin_checked="1"
+                                      >
+                                    <div
+                                      className="grid gap-9 sm:grid-cols-2 lg:grid-cols-3"
+-                                     bis_skin_checked="1"
+                                    >
+                                      <FooterGroup>
+                                        <div
+-                                         bis_skin_checked="1"
+                                        >
+                                      <FooterGroup>
+                                        <div
+-                                         bis_skin_checked="1"
+                                        >
+                                      <FooterGroup>
+                                        <div
+-                                         bis_skin_checked="1"
+                                        >
+                                      <FooterGroup>
+                                        <div
+-                                         bis_skin_checked="1"
+                                        >
+                                      <FooterGroup>
+                                        <div
+-                                         bis_skin_checked="1"
+                                        >
+                                  <div
+                                    className="border-t border-[#dfe3d9] px-5 py-5 text-center text-xs uppercase track..."
+-                                   bis_skin_checked="1"
+                                  >
+                  ...
+ 
+[browser] Image with src "http://localhost:3001/logo/kower-logo.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/egger.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/pfleiderer.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/swiss-krono.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/kronospan.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/cleaf.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/blum.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/hettich.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="pl" className="h-full scr...">
+                          <body
+                            className="flex min-h-full flex-col"
+-                           __processed_b3f8964a-0574-4e5b-a3c1-f4070f99fb42__="true"
+-                           bis_register="W3sibWFzdGVyIjp0cnVlLCJleHRlbnNpb25JZCI6ImVwcGlvY2VtaG1ubGJoanBsY2drb2ZjaWll..."
+                          >
+                  ...
+ 
+[browser] Image with src "http://localhost:3001/producer-logos/egger.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/pfleiderer.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/swiss-krono.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/kronospan.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/cleaf.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/blum.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/hettich.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/logo/kower-logo.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+⨯ ./lib/client-feedback-pages.ts
+Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: failed to convert rope into string
+
+Caused by:
+- invalid utf-8 sequence of 1 bytes from index 33580
+
+Import trace:
+  Server Component:
+    ./lib/client-feedback-pages.ts
+    ./lib/content.ts
+    ./app/[...slug]/page.tsx
+
+
+⨯ ./lib/client-feedback-pages.ts
+Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: failed to convert rope into string
+
+Caused by:
+- invalid utf-8 sequence of 1 bytes from index 33580
+
+Import trace:
+  Server Component:
+    ./lib/client-feedback-pages.ts
+    ./lib/content.ts
+    ./app/[...slug]/page.tsx
+
+
+[browser] Uncaught Error: ./lib/client-feedback-pages.ts
+Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: failed to convert rope into string
+
+Caused by:
+- invalid utf-8 sequence of 1 bytes from index 33580
+
+Import trace:
+  Server Component:
+    ./lib/client-feedback-pages.ts
+    ./lib/content.ts
+    ./app/[...slug]/page.tsx
+
+
+[browser] Uncaught Error: ./lib/client-feedback-pages.ts
+Reading source code for parsing failed
+An unexpected error happened while trying to read the source code to parse: failed to convert rope into string
+
+Caused by:
+- invalid utf-8 sequence of 1 bytes from index 33580
+
+Import trace:
+  Server Component:
+    ./lib/client-feedback-pages.ts
+    ./lib/content.ts
+    ./app/[...slug]/page.tsx
+
+
+[browser] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/lamele" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="pl" className="h-full scr...">
+                          <body
+                            className="flex min-h-full flex-col"
+-                           __processed_df58a495-80dc-4bc3-8a1e-418df8f5445b__="true"
+-                           bis_register="W3sibWFzdGVyIjp0cnVlLCJleHRlbnNpb25JZCI6ImVwcGlvY2VtaG1ubGJoanBsY2drb2ZjaWll..."
+                          >
+                  ...
+ 
+[browser] Image with src "http://localhost:3001/logo/kower-logo.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[browser] Image with src "http://localhost:3001/producer-logos/egger.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/pfleiderer.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/swiss-krono.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/kronospan.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/cleaf.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/blum.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/hettich.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/egger.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/pfleiderer.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/swiss-krono.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/kronospan.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/cleaf.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/blum.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/hettich.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/logo/kower-logo.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/egger.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/pfleiderer.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/swiss-krono.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/kronospan.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/cleaf.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/blum.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/hettich.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/logo/kower-logo.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/egger.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/pfleiderer.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/swiss-krono.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/kronospan.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/cleaf.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/blum.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/hettich.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/logo/kower-logo.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/egger.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/pfleiderer.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/swiss-krono.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/kronospan.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/cleaf.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/blum.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/hettich.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/logo/kower-logo.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/egger.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/pfleiderer.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/swiss-krono.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/kronospan.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/cleaf.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/blum.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/hettich.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/logo/kower-logo.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/egger.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/pfleiderer.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/swiss-krono.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/kronospan.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/cleaf.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/blum.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/hettich.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/logo/kower-logo.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "/logo/kower-logo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/egger.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/pfleiderer.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/swiss-krono.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/kronospan.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/cleaf.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/blum.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/hettich.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "/logo/kower-logo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/egger.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/pfleiderer.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/swiss-krono.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/kronospan.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/cleaf.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/blum.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/hettich.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "/logo/kower-logo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/egger.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/pfleiderer.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/swiss-krono.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/kronospan.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/cleaf.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/blum.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/hettich.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "/logo/kower-logo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/egger.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/pfleiderer.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/swiss-krono.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/kronospan.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/cleaf.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/blum.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "http://localhost:3001/producer-logos/hettich.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[browser] Image with src "/logo/kower-logo.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+⚠ Fast Refresh had to perform a full reload when ./node_modules/next/dist/client/image-component.js changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+⚠ Fast Refresh had to perform a full reload when ./node_modules/next/dist/client/image-component.js changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+⚠ Fast Refresh had to perform a full reload when ./node_modules/next/dist/client/image-component.js changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+⚠ Fast Refresh had to perform a full reload when ./node_modules/next/dist/client/image-component.js changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+⚠ Fast Refresh had to perform a full reload when ./node_modules/next/dist/client/image-component.js changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+⚠ Fast Refresh had to perform a full reload when ./node_modules/next/dist/client/image-component.js changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+Zmienne środowiskowe Firebase nie zostały w pełni skonfigurowane. Włączono tryb fallback na dane lokalne.
+Zmienne środowiskowe Firebase nie zostały w pełni skonfigurowane. Włączono tryb fallback na dane lokalne.
+Zmienne środowiskowe Firebase nie zostały w pełni skonfigurowane. Włączono tryb fallback na dane lokalne.
+Zmienne środowiskowe Firebase nie zostały w pełni skonfigurowane. Włączono tryb fallback na dane lokalne.
+Zmienne środowiskowe Firebase nie zostały w pełni skonfigurowane. Włączono tryb fallback na dane lokalne.
+Persisting failed: Unable to write SST file 00002534.sst
+
+Caused by:
+    System nie może odnaleźć określonej ścieżki. (os error 3)
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Compaction failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Compaction failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Compaction failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+⨯ Error: ENOENT: no such file or directory, open 'C:\KOWER2\.next\dev\server\app\page\build-manifest.json'
+    at ignore-listed frames {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'C:\\KOWER2\\.next\\dev\\server\\app\\page\\build-manifest.json'
+}
+⨯ Error: ENOENT: no such file or directory, open 'C:\KOWER2\.next\dev\server\app\page\build-manifest.json'
+    at ignore-listed frames {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'C:\\KOWER2\\.next\\dev\\server\\app\\page\\build-manifest.json'
+}
+⨯ Error: ENOENT: no such file or directory, open 'C:\KOWER2\.next\dev\server\pages\_app\build-manifest.json'
+    at ignore-listed frames {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'C:\\KOWER2\\.next\\dev\\server\\pages\\_app\\build-manifest.json'
+}
+⨯ Error: ENOENT: no such file or directory, open 'C:\KOWER2\.next\dev\server\pages\_app\build-manifest.json'
+    at ignore-listed frames {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'C:\\KOWER2\\.next\\dev\\server\\pages\\_app\\build-manifest.json'
+}
+Error: ENOENT: no such file or directory, open 'C:\KOWER2\.next\dev\server\app\page\build-manifest.json'
+    at ignore-listed frames {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'C:\\KOWER2\\.next\\dev\\server\\app\\page\\build-manifest.json'
+}
+Error: ENOENT: no such file or directory, open 'C:\KOWER2\.next\dev\server\app\page\build-manifest.json'
+    at ignore-listed frames {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'C:\\KOWER2\\.next\\dev\\server\\app\\page\\build-manifest.json'
+}
+⨯ Error: ENOENT: no such file or directory, open 'C:\KOWER2\.next\dev\server\pages\_app\build-manifest.json'
+    at ignore-listed frames {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'C:\\KOWER2\\.next\\dev\\server\\pages\\_app\\build-manifest.json'
+}
+⨯ Error: ENOENT: no such file or directory, open 'C:\KOWER2\.next\dev\server\pages\_app\build-manifest.json'
+    at ignore-listed frames {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'C:\\KOWER2\\.next\\dev\\server\\pages\\_app\\build-manifest.json'
+}
+Error: ENOENT: no such file or directory, open 'C:\KOWER2\.next\dev\server\pages\_app\build-manifest.json'
+    at ignore-listed frames {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'C:\\KOWER2\\.next\\dev\\server\\pages\\_app\\build-manifest.json'
+}
+Error: ENOENT: no such file or directory, open 'C:\KOWER2\.next\dev\server\pages\_app\build-manifest.json'
+    at ignore-listed frames {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'C:\\KOWER2\\.next\\dev\\server\\pages\\_app\\build-manifest.json'
+}
+⨯ Error: ENOENT: no such file or directory, open 'C:\KOWER2\.next\dev\server\app\page\build-manifest.json'
+    at ignore-listed frames {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'C:\\KOWER2\\.next\\dev\\server\\app\\page\\build-manifest.json'
+}
+⨯ Error: ENOENT: no such file or directory, open 'C:\KOWER2\.next\dev\server\app\page\build-manifest.json'
+    at ignore-listed frames {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'C:\\KOWER2\\.next\\dev\\server\\app\\page\\build-manifest.json'
+}
+⨯ Error: ENOENT: no such file or directory, open 'C:\KOWER2\.next\dev\server\app\page\build-manifest.json'
+    at ignore-listed frames {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'C:\\KOWER2\\.next\\dev\\server\\app\\page\\build-manifest.json'
+}
+⨯ Error: ENOENT: no such file or directory, open 'C:\KOWER2\.next\dev\server\pages\_app\build-manifest.json'
+    at ignore-listed frames {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'C:\\KOWER2\\.next\\dev\\server\\pages\\_app\\build-manifest.json'
+}
+⨯ Error: ENOENT: no such file or directory, open 'C:\KOWER2\.next\dev\server\pages\_app\build-manifest.json'
+    at ignore-listed frames {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'C:\\KOWER2\\.next\\dev\\server\\pages\\_app\\build-manifest.json'
+}
+⨯ Error: ENOENT: no such file or directory, open 'C:\KOWER2\.next\dev\server\pages\_app\build-manifest.json'
+    at ignore-listed frames {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'C:\\KOWER2\\.next\\dev\\server\\pages\\_app\\build-manifest.json'
+}
+Error: ENOENT: no such file or directory, open 'C:\KOWER2\.next\dev\server\app\page\build-manifest.json'
+    at ignore-listed frames {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'C:\\KOWER2\\.next\\dev\\server\\app\\page\\build-manifest.json'
+}
+Error: ENOENT: no such file or directory, open 'C:\KOWER2\.next\dev\server\app\page\build-manifest.json'
+    at ignore-listed frames {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'C:\\KOWER2\\.next\\dev\\server\\app\\page\\build-manifest.json'
+}
+Error: ENOENT: no such file or directory, open 'C:\KOWER2\.next\dev\server\app\page\build-manifest.json'
+    at ignore-listed frames {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'C:\\KOWER2\\.next\\dev\\server\\app\\page\\build-manifest.json'
+}
+⨯ Error: ENOENT: no such file or directory, open 'C:\KOWER2\.next\dev\server\pages\_app\build-manifest.json'
+    at ignore-listed frames {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'C:\\KOWER2\\.next\\dev\\server\\pages\\_app\\build-manifest.json'
+}
+⨯ Error: ENOENT: no such file or directory, open 'C:\KOWER2\.next\dev\server\pages\_app\build-manifest.json'
+    at ignore-listed frames {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'C:\\KOWER2\\.next\\dev\\server\\pages\\_app\\build-manifest.json'
+}
+⨯ Error: ENOENT: no such file or directory, open 'C:\KOWER2\.next\dev\server\pages\_app\build-manifest.json'
+    at ignore-listed frames {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'C:\\KOWER2\\.next\\dev\\server\\pages\\_app\\build-manifest.json'
+}
+Error: ENOENT: no such file or directory, open 'C:\KOWER2\.next\dev\server\pages\_app\build-manifest.json'
+    at ignore-listed frames {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'C:\\KOWER2\\.next\\dev\\server\\pages\\_app\\build-manifest.json'
+}
+⨯ Error: ENOENT: no such file or directory, open 'C:\KOWER2\.next\dev\server\app\page\build-manifest.json'
+    at ignore-listed frames {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'C:\\KOWER2\\.next\\dev\\server\\app\\page\\build-manifest.json'
+}
+Error: ENOENT: no such file or directory, open 'C:\KOWER2\.next\dev\server\pages\_app\build-manifest.json'
+    at ignore-listed frames {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'C:\\KOWER2\\.next\\dev\\server\\pages\\_app\\build-manifest.json'
+}
+Error: ENOENT: no such file or directory, open 'C:\KOWER2\.next\dev\server\pages\_app\build-manifest.json'
+    at ignore-listed frames {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'C:\\KOWER2\\.next\\dev\\server\\pages\\_app\\build-manifest.json'
+}
+⨯ Error: ENOENT: no such file or directory, open 'C:\KOWER2\.next\dev\server\pages\_app\build-manifest.json'
+    at ignore-listed frames {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'C:\\KOWER2\\.next\\dev\\server\\pages\\_app\\build-manifest.json'
+}
+Error: ENOENT: no such file or directory, open 'C:\KOWER2\.next\dev\server\app\page\build-manifest.json'
+    at ignore-listed frames {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'C:\\KOWER2\\.next\\dev\\server\\app\\page\\build-manifest.json'
+}
+⨯ Error: ENOENT: no such file or directory, open 'C:\KOWER2\.next\dev\server\pages\_app\build-manifest.json'
+    at ignore-listed frames {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'C:\\KOWER2\\.next\\dev\\server\\pages\\_app\\build-manifest.json'
+}
+Error: ENOENT: no such file or directory, open 'C:\KOWER2\.next\dev\server\pages\_app\build-manifest.json'
+    at ignore-listed frames {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'C:\\KOWER2\\.next\\dev\\server\\pages\\_app\\build-manifest.json'
+}
+⨯ Error: ENOENT: no such file or directory, open 'C:\KOWER2\.next\dev\server\app\page\build-manifest.json'
+    at ignore-listed frames {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'C:\\KOWER2\\.next\\dev\\server\\app\\page\\build-manifest.json'
+}
+⨯ Error: ENOENT: no such file or directory, open 'C:\KOWER2\.next\dev\server\pages\_app\build-manifest.json'
+    at ignore-listed frames {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'C:\\KOWER2\\.next\\dev\\server\\pages\\_app\\build-manifest.json'
+}
+Error: ENOENT: no such file or directory, open 'C:\KOWER2\.next\dev\server\app\page\build-manifest.json'
+    at ignore-listed frames {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'C:\\KOWER2\\.next\\dev\\server\\app\\page\\build-manifest.json'
+}
+⨯ Error: ENOENT: no such file or directory, open 'C:\KOWER2\.next\dev\server\pages\_app\build-manifest.json'
+    at ignore-listed frames {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'C:\\KOWER2\\.next\\dev\\server\\pages\\_app\\build-manifest.json'
+}
+Error: ENOENT: no such file or directory, open 'C:\KOWER2\.next\dev\server\pages\_app\build-manifest.json'
+    at ignore-listed frames {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'C:\\KOWER2\\.next\\dev\\server\\pages\\_app\\build-manifest.json'
+}
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Compaction failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Compaction failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Compaction failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Compaction failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Compaction failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Compaction failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Compaction failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+
+thread 'tokio-runtime-worker' (1348) panicked at turbopack\crates\turbo-tasks-backend\src\backend\operation\mod.rs:197:17:
+Failed to restore task data (corrupted database or bug): Data for TaskId 529)
+
+Caused by:
+    0: Looking up task storage for TaskId 529 from database failed
+    1: Unable to open static sorted file referenced from 00000495.meta
+    2: Unable to open static sorted file 00000493.sst
+    3: Failed to open SST file C:\KOWER2\.next\dev\cache/turbopack\ee6e79b1\00000493.sst
+    4: System nie może odnaleźć określonej ścieżki. (os error 3)
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+thread 'tokio-runtime-worker' (34580) panicked at turbopack\crates\turbo-tasks-backend\src\backend\operation\mod.rs:225:17:
+Failed to restore task data (corrupted database or bug): Data for batch of 2 tasks
+
+Caused by:
+    0: Looking up typed data for 2 tasks from database failed
+    1: Unable to open static sorted file referenced from 00000495.meta
+    2: Unable to open static sorted file 00000493.sst
+    3: Failed to open SST file C:\KOWER2\.next\dev\cache/turbopack\ee6e79b1\00000493.sst
+    4: System nie może odnaleźć określonej ścieżki. (os error 3)
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Compaction failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Compaction failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Compaction failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Compaction failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Compaction failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Compaction failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Compaction failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Compaction failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Compaction failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Compaction failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Compaction failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Compaction failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Compaction failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Compaction failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Compaction failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Compaction failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Compaction failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Compaction failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+
+thread 'tokio-runtime-worker' (20632) panicked at turbopack\crates\turbo-tasks-backend\src\backend\operation\mod.rs:197:17:
+Failed to restore task data (corrupted database or bug): Meta for TaskId 57362)
+
+Caused by:
+    0: Looking up task storage for TaskId 57362 from database failed
+    1: Unable to open static sorted file referenced from 00000010.meta
+    2: Unable to open static sorted file 00000006.sst
+    3: Failed to open SST file C:\KOWER2\.next\dev\cache/turbopack\ee6e79b1\00000006.sst
+    4: System nie może odnaleźć określonej ścieżki. (os error 3)
+Persisting failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+Compaction failed: Another write batch or compaction is already active (Only a single write operations is allowed at a time)
+
+thread 'tokio-runtime-worker' (1348) panicked at turbopack\crates\turbo-tasks-backend\src\backend\operation\mod.rs:197:17:
+Failed to restore task data (corrupted database or bug): Meta for TaskId 278931)
+
+Caused by:
+    0: Looking up task storage for TaskId 278931 from database failed
+    1: Unable to open static sorted file referenced from 00002484.meta
+    2: Unable to open static sorted file 00002475.sst
+    3: Failed to open SST file C:\KOWER2\.next\dev\cache/turbopack\ee6e79b1\00002475.sst
+    4: System nie może odnaleźć określonej ścieżki. (os error 3)
+
+thread 'tokio-runtime-worker' (1348) panicked at turbopack\crates\turbo-tasks-backend\src\backend\operation\mod.rs:197:17:
+Failed to restore task data (corrupted database or bug): Meta for TaskId 53473)
+
+Caused by:
+    0: Looking up task storage for TaskId 53473 from database failed
+    1: Unable to open static sorted file referenced from 00000010.meta
+    2: Unable to open static sorted file 00000006.sst
+    3: Failed to open SST file C:\KOWER2\.next\dev\cache/turbopack\ee6e79b1\00000006.sst
+    4: System nie może odnaleźć określonej ścieżki. (os error 3)
