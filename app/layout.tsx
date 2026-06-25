@@ -32,6 +32,13 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
+  openGraph: {
+    type: "website",
+    locale: "pl_PL",
+    siteName: "Kower Pracownia Meblarska",
+    title: "Kower Pracownia Meblarska | Meble na wymiar",
+    description: "Meble i zabudowy na wymiar z naturalnych materiałów. Nowoczesne stolarstwo z okolic Kraśnika i Lublina.",
+  },
 };
 
 export default function RootLayout({
