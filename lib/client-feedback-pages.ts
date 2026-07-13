@@ -162,7 +162,7 @@ const furniturePages: MarketingPage[] = [
     slug: "oferta/meble-na-wymiar",
     title: "Meble na wymiar",
     metaTitle: "Meble na wymiar Kraśnik · Kuchnie i szafy | Kower",
-    metaDescription: "Projektujemy i produkujemy meble na wymiar: kuchnie, garderoby, łazienki oraz nietypowe zabudowy. Obsługujemy Kraśnik, Janów Lubelski i lubelskie.",
+    metaDescription: "Projektujemy i produkujemy meble na wymiar: kuchnie, garderoby, łazienki oraz nietypowe zabudowy. Obsługujemy Lubelskie, Świętokrzyskie, Podkarpackie, Małopolskie i Mazowieckie.",
     eyebrow: "Dla Domu i Mieszkania",
     h1: "Meble dopasowane do Twojego stylu życia i przestrzeni.",
     intro:
@@ -1561,7 +1561,7 @@ export const clientFeedbackPages: MarketingPage[] = [
       },
       {
         question: "Gdzie realizujecie swoje usługi?",
-        answer: "Nasza pracownia stolarska zlokalizowana jest w Kosinie, a projekty montażowe realizujemy na terenie Kraśnika, Janowa Lubelskiego, Lublina oraz całego województwa lubelskiego."
+        answer: "Nasza pracownia stolarska zlokalizowana jest w Kosinie, a projekty montażowe realizujemy na terenie Kraśnika, Janowa Lubelskiego, Lublina oraz województw lubelskiego, świętokrzyskiego, podkarpackiego, małopolskiego i mazowieckiego."
       },
       {
         question: "Czy wycena i pomiar są bezpłatne?",

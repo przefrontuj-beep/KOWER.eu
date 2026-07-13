@@ -26,12 +26,12 @@ const defaultContact: ContactSettings = {
   city: siteConfig.city,
   nip: siteConfig.nip,
   openingHours: "Poniedziałek-piątek, 8:00-17:00",
-  facebookUrl: "",
+  facebookUrl: siteConfig.facebookUrl,
   instagramUrl: "",
   googleMapsUrl: "",
   ctaText: "Umów bezpłatną konsultację",
   contactText:
-    "Skontaktuj się z pracownią KOWER w sprawie mebli na wymiar, lameli lub usług płytowych.",
+    "Skontaktuj się z pracownią KOWER w sprawie mebli na wymiar, lameli lub usług płytowych. Obsługujemy województwa lubelskie, świętokrzyskie, podkarpackie, małopolskie i mazowieckie.",
 };
 
 const defaultHomepage: HomepageSettings = {
@@ -52,9 +52,15 @@ export const getPublicContactSettings = cache(async () => {
 
   try {
     const snapshot = await getDoc(doc(db, "siteSettings", "contact"));
-    return snapshot.exists()
-      ? ({ ...defaultContact, ...snapshot.data() } as ContactSettings)
-      : defaultContact;
+    if (!snapshot.exists()) {
+      return defaultContact;
+    }
+
+    const settings = { ...defaultContact, ...snapshot.data() } as ContactSettings;
+    return {
+      ...settings,
+      facebookUrl: settings.facebookUrl || defaultContact.facebookUrl,
+    };
   } catch {
     return defaultContact;
   }

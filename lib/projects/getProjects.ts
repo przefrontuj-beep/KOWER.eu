@@ -5,6 +5,7 @@ import type { Project, ProjectCategory, ProjectImage } from "@/types/project";
 
 const localProjectsBySlug = new Map(localProjects.map((project) => [project.slug, project]));
 const legacyRealizationImageIdPattern = /^realizacja-\d+$/;
+const localCopyOverrideSlugs = new Set(localProjects.map((project) => project.slug));
 type PublicOrderField = "homepageOrder" | "galleryOrder";
 
 function removeProjectLocation(project: Project): Project {
@@ -64,6 +65,32 @@ function sortImages(images: ProjectImage[]) {
 
 function getUsableImages(images: ProjectImage[]) {
   return sortImages(images.filter((image) => Boolean(image.src)));
+}
+
+function applyLocalImageCopy(
+  images: ProjectImage[],
+  localProject: Project,
+  shouldOverride: boolean,
+) {
+  if (!shouldOverride) {
+    return images;
+  }
+
+  return images.map((projectImage) => {
+    const localImage =
+      localProject.images.find((image) => image.id === projectImage.id) ||
+      (localProject.images.length === 1 ? localProject.images[0] : undefined);
+    if (!localImage) {
+      return projectImage;
+    }
+
+    return {
+      ...projectImage,
+      alt: localImage.alt,
+      caption: localImage.caption,
+      focalPoint: localImage.focalPoint || projectImage.focalPoint,
+    };
+  });
 }
 
 function isPublishedProject(project: Project) {
@@ -174,6 +201,8 @@ function hydrateProjectWithLocalCatalog(project: Project): Project | null {
     project.coverImage
       ? project.coverImage
       : images[0]?.mediumUrl || images[0]?.thumbnailUrl || images[0]?.src || "";
+  const shouldUseLocalCopy = localCopyOverrideSlugs.has(localProject.slug);
+  const imageCopy = applyLocalImageCopy(images, localProject, shouldUseLocalCopy);
 
   if (!coverImage) {
     return null;
@@ -181,13 +210,15 @@ function hydrateProjectWithLocalCatalog(project: Project): Project | null {
 
   return removeProjectLocation({
     ...project,
-    title: project.title || localProject.title,
-    category: project.category || localProject.category,
-    description: project.description || localProject.description,
-    tags: project.tags.length > 0 ? project.tags : localProject.tags,
+    title: shouldUseLocalCopy ? localProject.title : project.title || localProject.title,
+    category: shouldUseLocalCopy ? localProject.category : project.category || localProject.category,
+    description: shouldUseLocalCopy ? localProject.description : project.description || localProject.description,
+    tags: shouldUseLocalCopy
+      ? localProject.tags
+      : project.tags.length > 0 ? project.tags : localProject.tags,
     coverImage,
     coverFocalPoint: project.coverFocalPoint || localProject.coverFocalPoint,
-    images,
+    images: imageCopy,
   });
 }
 
@@ -514,7 +545,10 @@ export async function getHomepageProjects(maxResults?: number): Promise<Project[
     const galleryProjects = gallerySnapshot.docs
       .map((document) => mapGalleryDocToProject(document.data(), document.id))
       .filter((project): project is Project => project !== null);
-    const homepageImages = getHomepageProjectList(galleryProjects, maxResults);
+    const homepageImages = getHomepageProjectList(
+      completeProjectsWithLocalCatalog(galleryProjects, "homepageOrder"),
+      maxResults,
+    );
 
     if (homepageImages.length > 0) {
       return homepageImages;

@@ -95,14 +95,14 @@ const producerLogos = [
 export const metadata: Metadata = {
   title: "Kower | Meble na wymiar Kraśnik, Kosin · Kuchnie i szafy",
   description:
-    "Pracownia stolarska Kower oferuje nowoczesne kuchnie na wymiar, szafy wnękowe, garderoby oraz lamele. Obsługujemy Kraśnik, Kosin i woj. lubelskie. Sprawdź!",
+    "Pracownia stolarska Kower oferuje nowoczesne kuchnie na wymiar, szafy wnękowe, garderoby oraz lamele. Obsługujemy Lubelskie, Świętokrzyskie, Podkarpackie, Małopolskie i Mazowieckie.",
   alternates: {
     canonical: "/",
   },
   openGraph: {
     title: "Kower | Meble na wymiar Kraśnik, Kosin · Kuchnie i szafy",
     description:
-      "Pracownia stolarska Kower oferuje nowoczesne kuchnie na wymiar, szafy wnękowe, garderoby oraz lamele. Obsługujemy Kraśnik, Kosin i woj. lubelskie. Sprawdź!",
+      "Pracownia stolarska Kower oferuje nowoczesne kuchnie na wymiar, szafy wnękowe, garderoby oraz lamele. Obsługujemy Lubelskie, Świętokrzyskie, Podkarpackie, Małopolskie i Mazowieckie.",
     url: "/",
     type: "website",
   },
@@ -336,7 +336,7 @@ export default async function Home({ searchParams }: PageProps) {
                   Jako rzemieślnicza pracownia stolarska z Kosina, łączymy tradycyjne techniki obróbki drewna z nowoczesnym parkiem maszynowym. Wykonujemy meble na wymiar dostosowane do indywidualnych potrzeb – od nowoczesnych kuchni w matowych wykończeniach, przez pojemne garderoby wnękowe, aż po dekoracyjne lamele ścienne ocieplające przestrzeń.
                 </p>
                 <p className="mt-4 text-[14px] leading-7 text-[#6d6a62]">
-                  Współpracujemy zarówno z klientami indywidualnymi z województwa lubelskiego, jak i architektami wnętrz poszukującymi solidnego wykonawcy swoich projektów. Oferujemy także precyzyjne cięcie i oklejanie płyt meblowych pod zadany wymiar.
+                  Współpracujemy z klientami indywidualnymi z województw lubelskiego, świętokrzyskiego, podkarpackiego, małopolskiego i mazowieckiego, a także z architektami wnętrz poszukującymi solidnego wykonawcy swoich projektów. Oferujemy także precyzyjne cięcie i oklejanie płyt meblowych pod zadany wymiar.
                 </p>
               </div>
               <div className="relative min-h-[300px] overflow-hidden rounded-2xl border border-[#ded6ca] lg:min-h-[400px]">

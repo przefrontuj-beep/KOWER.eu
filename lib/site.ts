@@ -4,6 +4,7 @@ export const siteConfig = {
   baseUrl: "https://kower.eu",
   phone: "+48 690 877 720",
   email: "a.ciosmak@kower.eu",
+  facebookUrl: "https://www.facebook.com/share/1GxaLeAXHE/",
   address: "Kosin 20, 23-235 Kosin",
   city: "Kosin",
   nip: "7151938015",

@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { ExternalLink } from "lucide-react";
 import { footerGroups } from "@/lib/site";
 import { usePublicContactSettings } from "@/hooks/usePublicContactSettings";
 
@@ -27,9 +28,20 @@ export default function SiteFooter() {
             <p className="font-semibold">{contact.phone}</p>
             <p className="font-semibold">{contact.email}</p>
             <p>{contact.address}</p>
+            {contact.facebookUrl ? (
+              <Link
+                href={contact.facebookUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 font-semibold text-[#2b2d28] transition hover:text-[#487330]"
+              >
+                Facebook
+                <ExternalLink className="h-3.5 w-3.5" strokeWidth={1.7} aria-hidden="true" />
+              </Link>
+            ) : null}
             <p className="mt-3 text-xs text-[#5e6258]">
               <span className="font-bold uppercase tracking-wider block text-[10px] text-[#487330] mb-1">Obszar działania</span>
-              <Link href="/kontakt" className="hover:text-[#487330] underline decoration-[#487330]/20">Kosin</Link> · <Link href="/kontakt" className="hover:text-[#487330] underline decoration-[#487330]/20">Kraśnik</Link> · <Link href="/kontakt" className="hover:text-[#487330] underline decoration-[#487330]/20">Janów Lubelski</Link> · <Link href="/kontakt" className="hover:text-[#487330] underline decoration-[#487330]/20">Lublin</Link> · woj. lubelskie
+              <Link href="/kontakt" className="hover:text-[#487330] underline decoration-[#487330]/20">Kosin</Link> · <Link href="/kontakt" className="hover:text-[#487330] underline decoration-[#487330]/20">Kraśnik</Link> · <Link href="/kontakt" className="hover:text-[#487330] underline decoration-[#487330]/20">Janów Lubelski</Link> · <Link href="/kontakt" className="hover:text-[#487330] underline decoration-[#487330]/20">Lublin</Link> · Lubelskie · Świętokrzyskie · Podkarpackie · Małopolskie · Mazowieckie
             </p>
           </div>
           <div className="mt-6 flex flex-wrap gap-3">

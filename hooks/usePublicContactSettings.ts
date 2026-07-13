@@ -13,12 +13,20 @@ const fallback: ContactSettings = {
   city: siteConfig.city,
   nip: siteConfig.nip,
   openingHours: "",
-  facebookUrl: "",
+  facebookUrl: siteConfig.facebookUrl,
   instagramUrl: "",
   googleMapsUrl: "",
   ctaText: "Umów bezpłatną konsultację",
-  contactText: "",
+  contactText:
+    "Skontaktuj się z pracownią KOWER w sprawie mebli na wymiar, lameli lub usług płytowych. Obsługujemy województwa lubelskie, świętokrzyskie, podkarpackie, małopolskie i mazowieckie.",
 };
+
+function withContactFallbacks(settings: ContactSettings): ContactSettings {
+  return {
+    ...settings,
+    facebookUrl: settings.facebookUrl || fallback.facebookUrl,
+  };
+}
 
 export function usePublicContactSettings() {
   const [settings, setSettings] = useState(fallback);
@@ -31,7 +39,7 @@ export function usePublicContactSettings() {
     void getDoc(doc(activeDb, "siteSettings", "contact"))
       .then((snapshot) => {
         if (!cancelled && snapshot.exists()) {
-          setSettings({ ...fallback, ...snapshot.data() } as ContactSettings);
+          setSettings(withContactFallbacks({ ...fallback, ...snapshot.data() } as ContactSettings));
         }
       })
       .catch(() => undefined);

@@ -4,6 +4,13 @@ import { siteConfig } from "./site";
 import type { ContactSettings } from "@/types/admin";
 
 const absoluteUrl = (path: string) => new URL(path, siteConfig.baseUrl).toString();
+const servedAreas = [
+  "województwo lubelskie",
+  "województwo świętokrzyskie",
+  "województwo podkarpackie",
+  "województwo małopolskie",
+  "województwo mazowieckie",
+];
 
 export function breadcrumbSchema(items: { label: string; href: string }[]) {
   return {
@@ -31,7 +38,10 @@ export function serviceSchema(page: MarketingPage, contact?: ContactSettings) {
       telephone: contact?.phone || siteConfig.phone,
       email: contact?.email || siteConfig.email,
     },
-    areaServed: contact?.city || siteConfig.city,
+    areaServed: servedAreas.map((name) => ({
+      "@type": "AdministrativeArea",
+      name,
+    })),
     url: absoluteUrl(`/${page.slug}`),
     serviceType: page.title,
   };
@@ -112,12 +122,10 @@ export function localBusinessSchema(contact?: ContactSettings) {
       "addressRegion": "lubelskie",
       "addressCountry": "PL"
     },
-    "areaServed": [
-      { "@type": "AdministrativeArea", "name": "Kosin" },
-      { "@type": "AdministrativeArea", "name": "Kraśnik" },
-      { "@type": "AdministrativeArea", "name": "Janów Lubelski" },
-      { "@type": "AdministrativeArea", "name": "lubelskie" }
-    ],
+    "areaServed": servedAreas.map((name) => ({
+      "@type": "AdministrativeArea",
+      "name": name
+    })),
     "openingHoursSpecification": {
       "@type": "OpeningHoursSpecification",
       "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],

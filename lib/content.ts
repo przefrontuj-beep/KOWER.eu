@@ -93,7 +93,7 @@ const basePages: MarketingPage[] = [
     leadTitle: "Pasja do drewna i szacunek do materiału.",
     lead: [
       "W naszej codziennej pracy łączymy precyzję obróbki maszynowej na sterowanych numerycznie urządzeniach z dokładnym, ręcznym pasowaniem detali.",
-      "Obsługujemy klientów z Kraśnika, Janowa Lubelskiego, Lublina oraz całego województwa lubelskiego, dbając o transparentną komunikację i terminowość."
+      "Obsługujemy klientów z Kraśnika, Janowa Lubelskiego, Lublina oraz województw lubelskiego, świętokrzyskiego, podkarpackiego, małopolskiego i mazowieckiego, dbając o transparentną komunikację i terminowość."
     ],
     benefits: [
       "Laserowe inwentaryzacje i dokładne pomiary 3D.",
@@ -106,7 +106,7 @@ const basePages: MarketingPage[] = [
     faq: [
       {
         question: "Gdzie wykonujecie meble na wymiar?",
-        answer: "Obsługujemy głównie Kraśnik, Janów Lubelski, Lublin oraz okoliczne miejscowości w województwie lubelskim.",
+        answer: "Obsługujemy Kraśnik, Janów Lubelski, Lublin oraz inwestycje w województwach lubelskim, świętokrzyskim, podkarpackim, małopolskim i mazowieckim.",
       },
       {
         question: "Jakie materiały stosujecie w meblach?",
@@ -179,11 +179,11 @@ const basePages: MarketingPage[] = [
     title: "Kontakt",
     metaTitle: "Kontakt | Stolarnia Kosin · Meble na wymiar Kraśnik | Kower",
     metaDescription:
-      "Skontaktuj się z Kower w sprawie wyceny mebli na wymiar, lameli lub cięcia płyt w Kraśniku, Janowie Lubelskim i Lublinie. Zadzwoń lub napisz do nas!",
+      "Skontaktuj się z Kower w sprawie wyceny mebli na wymiar, lameli lub cięcia płyt w woj. lubelskim, świętokrzyskim, podkarpackim, małopolskim i mazowieckim.",
     eyebrow: "Formularz Kontaktowy",
     h1: "Porozmawiajmy o wycenie Twoich mebli.",
     intro:
-      "Skontaktuj się z naszą pracownią stolarską w Kosinie koło Kraśnika. Obsługujemy zamówienia z terenu Kraśnika, Janowa Lubelskiego i całego województwa lubelskiego. Zadzwoń, wyślij e-mail lub skorzystaj z poniższego formularza.",
+      "Skontaktuj się z naszą pracownią stolarską w Kosinie koło Kraśnika. Obsługujemy zamówienia z terenu województw lubelskiego, świętokrzyskiego, podkarpackiego, małopolskiego i mazowieckiego. Zadzwoń, wyślij e-mail lub skorzystaj z poniższego formularza.",
     image: "/client-assets/project-stairs.jpg",
     imageAlt: "Detal schodów dębowych wykonanych przez Kower",
     leadTitle: "Pracownia Kower",
@@ -230,7 +230,7 @@ const basePages: MarketingPage[] = [
     title: "Wycena",
     metaTitle: "Bezpłatna wycena mebli na wymiar Kraśnik | Kower",
     metaDescription:
-      "Uzyskaj bezpłatną wycenę mebli kuchennych, szaf i lameli ściennych w Kraśniku i Lublinie. Wypełnij prosty formularz i prześlij pliki projektu.",
+      "Uzyskaj bezpłatną wycenę mebli kuchennych, szaf i lameli ściennych w woj. lubelskim, świętokrzyskim, podkarpackim, małopolskim i mazowieckim.",
     eyebrow: "Bezpłatny Kosztorys",
     h1: "Uzyskaj szczegółową, bezpłatną wycenę stolarki.",
     intro:
