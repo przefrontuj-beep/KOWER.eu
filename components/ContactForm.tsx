@@ -153,10 +153,16 @@ export default function ContactForm({ variant = "contact" }: { variant?: FormVar
         method: "POST",
         body: data,
       });
-      const result = (await response.json()) as { ok?: boolean; message?: string };
+
+      let result;
+      try {
+        result = await response.json();
+      } catch (parseError) {
+        throw new Error(`Błąd serwera (kod ${response.status}). Skontaktuj się z administratorem.`);
+      }
 
       if (!response.ok || !result.ok) {
-        throw new Error(result.message || "Nie udało się wysłać formularza.");
+        throw new Error(result?.message || "Nie udało się wysłać formularza.");
       }
 
       setStatus("success");
@@ -334,15 +340,7 @@ export default function ContactForm({ variant = "contact" }: { variant?: FormVar
           )}
         </Field>
 
-        <div className="border border-[#ebdccb]/30 bg-[#faf8f2] border-[#e8e4db] px-4 py-3.5 rounded-[12px] flex items-center gap-3 text-[13px] text-[#7a7265] leading-relaxed md:col-span-2 shadow-none">
-          <Shield className="h-5 w-5 text-[#7a7265] shrink-0" strokeWidth={1.8} />
-          <div>
-            <span className="font-semibold text-[#5c564c]">Ochrona antyspamowa.</span>{" "}
-            {recaptchaSiteKey
-              ? "Formularz jest chroniony przez reCAPTCHA."
-              : "Ochrona reCAPTCHA zostanie aktywowana po konfiguracji kluczy środowiskowych."}
-          </div>
-        </div>
+
 
         <Field orientation="horizontal" className="md:col-span-2 items-start gap-3">
           <Checkbox id="rodo" name="rodo" required className="size-[18px] rounded-[4px] border-[#e5e1d8] cursor-pointer mt-1 focus-visible:ring-[#487330] focus-visible:border-[#487330] data-checked:bg-[#487330] data-checked:border-[#487330]" />
