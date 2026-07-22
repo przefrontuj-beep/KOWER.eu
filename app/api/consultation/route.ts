@@ -178,21 +178,11 @@ async function persistLead(
     return leadRef.id;
   }
 
-  if (!publicDb) {
-    throw new Error("Firebase nie jest skonfigurowany.");
+  if (!services) {
+    throw new Error("Firebase Admin nie jest poprawnie skonfigurowany (brakujące zmienne środowiskowe). Zapis w Firebase pominięto.");
   }
 
-  const leadRef = await addDoc(collection(publicDb, "leads"), {
-    ...lead,
-    source: "formularz-www",
-    status: "new",
-    adminNote: "",
-    attachments: attachmentMetadata,
-    createdAt: serverTimestamp(),
-    updatedAt: serverTimestamp(),
-  });
-
-  return leadRef.id;
+  return "";
 }
 
 export async function POST(request: Request) {
