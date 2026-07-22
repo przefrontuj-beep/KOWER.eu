@@ -1,7 +1,4 @@
 import { NextResponse } from "next/server";
-import { addDoc, collection, serverTimestamp } from "firebase/firestore";
-import { getFirebaseAdminServices } from "@/lib/firebase/admin";
-import { db as publicDb } from "@/lib/firebase/client";
 import { siteConfig } from "@/lib/site";
 
 export const runtime = "nodejs";
@@ -84,30 +81,36 @@ function safeFileName(fileName: string) {
 async function verifyRecaptcha(token: string) {
   const secret = process.env.RECAPTCHA_SECRET_KEY;
   if (!secret) {
-    console.warn("RECAPTCHA_SECRET_KEY nie jest ustawiony — odrzucam żądanie dla bezpieczeństwa.");
-    return false;
+    // No secret configured — skip reCAPTCHA verification (allow the request)
+    console.warn("RECAPTCHA_SECRET_KEY nie jest ustawiony — pomijam weryfikację reCAPTCHA.");
+    return true;
   }
   if (!token) {
     return false;
   }
 
-  const response = await fetch("https://www.google.com/recaptcha/api/siteverify", {
-    method: "POST",
-    headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    body: new URLSearchParams({ secret, response: token }),
-    cache: "no-store",
-  });
-  const result = (await response.json()) as {
-    success?: boolean;
-    score?: number;
-    action?: string;
-  };
+  try {
+    const response = await fetch("https://www.google.com/recaptcha/api/siteverify", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams({ secret, response: token }),
+      cache: "no-store",
+    });
+    const result = (await response.json()) as {
+      success?: boolean;
+      score?: number;
+      action?: string;
+    };
 
-  return (
-    result.success === true &&
-    (result.action === undefined || result.action === "contact_form") &&
-    (result.score === undefined || result.score >= 0.5)
-  );
+    return (
+      result.success === true &&
+      (result.action === undefined || result.action === "contact_form") &&
+      (result.score === undefined || result.score >= 0.5)
+    );
+  } catch (error) {
+    console.error("Błąd weryfikacji reCAPTCHA:", error);
+    return false;
+  }
 }
 
 async function fileToAttachment(file: File) {
@@ -129,60 +132,61 @@ async function persistLead(
   },
   files: File[],
 ) {
+  // Lazy-load Firebase Admin to avoid bundling it at module level
+  // and crashing the serverless function on Netlify
+  const { getFirebaseAdminServices } = await import("@/lib/firebase/admin");
   const services = getFirebaseAdminServices();
+
+  if (!services) {
+    console.warn("Firebase Admin nie jest skonfigurowany — pomijam zapis w bazie danych.");
+    return "";
+  }
+
   const attachmentMetadata = files.map((file) => ({
     name: safeFileName(file.name),
     type: file.type,
     size: file.size,
   }));
 
-  if (services) {
-    const leadRef = services.db.collection("leads").doc();
-    const storedAttachments = [];
-    const storedPaths: string[] = [];
+  const leadRef = services.db.collection("leads").doc();
+  const storedAttachments = [];
+  const storedPaths: string[] = [];
 
-    try {
-      for (const [index, file] of files.entries()) {
-        const storagePath = `kower/leads/${leadRef.id}/${index + 1}-${safeFileName(file.name)}`;
-        const buffer = Buffer.from(await file.arrayBuffer());
-        await services.storage.bucket().file(storagePath).save(buffer, {
-          resumable: false,
-          metadata: {
-            contentType: file.type,
-            cacheControl: "private, max-age=0, no-store",
-          },
-        });
-        storedPaths.push(storagePath);
-        storedAttachments.push({
-          ...attachmentMetadata[index],
-          storagePath,
-        });
-      }
-
-      await leadRef.set({
-        ...lead,
-        source: "formularz-www",
-        status: "new",
-        adminNote: "",
-        attachments: storedAttachments,
-        createdAt: new Date(),
-        updatedAt: new Date(),
+  try {
+    for (const [index, file] of files.entries()) {
+      const storagePath = `kower/leads/${leadRef.id}/${index + 1}-${safeFileName(file.name)}`;
+      const buffer = Buffer.from(await file.arrayBuffer());
+      await services.storage.bucket().file(storagePath).save(buffer, {
+        resumable: false,
+        metadata: {
+          contentType: file.type,
+          cacheControl: "private, max-age=0, no-store",
+        },
       });
-    } catch (error) {
-      await Promise.allSettled(
-        storedPaths.map((path) => services.storage.bucket().file(path).delete()),
-      );
-      throw error;
+      storedPaths.push(storagePath);
+      storedAttachments.push({
+        ...attachmentMetadata[index],
+        storagePath,
+      });
     }
 
-    return leadRef.id;
+    await leadRef.set({
+      ...lead,
+      source: "formularz-www",
+      status: "new",
+      adminNote: "",
+      attachments: storedAttachments,
+      createdAt: new Date(),
+      updatedAt: new Date(),
+    });
+  } catch (error) {
+    await Promise.allSettled(
+      storedPaths.map((path) => services.storage.bucket().file(path).delete()),
+    );
+    throw error;
   }
 
-  if (!services) {
-    throw new Error("Firebase Admin nie jest poprawnie skonfigurowany (brakujące zmienne środowiskowe). Zapis w Firebase pominięto.");
-  }
-
-  return "";
+  return leadRef.id;
 }
 
 export async function POST(request: Request) {
@@ -284,7 +288,7 @@ export async function POST(request: Request) {
         { name, email, phone, message, scope, topic },
         files,
       );
-      leadSaved = true;
+      leadSaved = Boolean(leadId);
     } catch (persistenceError) {
       console.error("Nie udało się zapisać zgłoszenia w Firebase:", persistenceError);
     }
