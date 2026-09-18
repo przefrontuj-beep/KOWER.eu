@@ -7,11 +7,30 @@ import { ProjectCard } from "./ProjectCard";
 import { ProjectFilters } from "./ProjectFilters";
 import { ProjectLightbox, type ActiveProjectImage } from "./ProjectLightbox";
 
-type Category = (typeof projectFilterCategories)[number];
-
 export function ProjectsGrid({ projects }: { projects: Project[] }) {
-  const [activeCategory, setActiveCategory] = useState<Category>("Wszystkie");
+  const [activeCategory, setActiveCategory] = useState<string>("Wszystkie");
   const [active, setActive] = useState<ActiveProjectImage>(null);
+
+  const categories = useMemo(() => {
+    const categorySet = new Set<string>();
+    for (const project of projects) {
+      if (project.category && project.category.trim()) {
+        categorySet.add(project.category.trim());
+      }
+    }
+
+    const result: string[] = ["Wszystkie"];
+    for (const cat of projectFilterCategories) {
+      if (cat !== "Wszystkie") {
+        result.push(cat);
+        categorySet.delete(cat);
+      }
+    }
+    for (const cat of categorySet) {
+      result.push(cat);
+    }
+    return result;
+  }, [projects]);
 
   const filteredProjects = useMemo(() => {
     if (activeCategory === "Wszystkie") {
@@ -24,7 +43,7 @@ export function ProjectsGrid({ projects }: { projects: Project[] }) {
   return (
     <>
       <ProjectFilters
-        categories={projectFilterCategories}
+        categories={categories}
         activeCategory={activeCategory}
         onChange={setActiveCategory}
       />

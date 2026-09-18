@@ -149,16 +149,11 @@ export default function MarketingPageView({ page, projects }: { page: MarketingP
 
         {page.kind === "gallery" && (
           <section aria-labelledby="gallery-grid-title" className="mx-auto max-w-[1180px] px-5 py-16 lg:px-8">
-            <div className="mb-9 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
-              <div>
-                <p className="text-xs font-bold uppercase tracking-[0.24em] text-[#487330]">Realizacje</p>
-                <h2 id="gallery-grid-title" className="mt-4 font-serif text-[32px] sm:text-[38px] lg:text-[44px] font-medium leading-[1.1] tracking-tight text-[#242620] text-pretty">
-                  Galeria prac Kower
-                </h2>
-              </div>
-              <p className="max-w-md text-sm leading-6 text-[#62685d]">
-                Zdjęcia pochodzą bezpośrednio z bazy danych Firebase i są w pełni zarządzalne z poziomu panelu administratora.
-              </p>
+            <div className="mb-9">
+              <p className="text-xs font-bold uppercase tracking-[0.24em] text-[#487330]">Realizacje</p>
+              <h2 id="gallery-grid-title" className="mt-4 font-serif text-[32px] sm:text-[38px] lg:text-[44px] font-medium leading-[1.1] tracking-tight text-[#242620] text-pretty">
+                Galeria prac Kower
+              </h2>
             </div>
             <ProjectsGrid projects={projects || []} />
           </section>

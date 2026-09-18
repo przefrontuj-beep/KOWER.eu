@@ -2,12 +2,10 @@
 
 import type { projectFilterCategories } from "@/lib/projects/project-data";
 
-type Category = (typeof projectFilterCategories)[number];
-
 type ProjectFiltersProps = {
-  categories: readonly Category[];
-  activeCategory: Category;
-  onChange: (category: Category) => void;
+  categories: readonly string[];
+  activeCategory: string;
+  onChange: (category: string) => void;
 };
 
 export function ProjectFilters({ categories, activeCategory, onChange }: ProjectFiltersProps) {

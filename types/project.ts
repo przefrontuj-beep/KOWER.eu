@@ -8,7 +8,9 @@ export type ProjectCategory =
   | "Biura"
   | "Detale"
   | "Inne"
-  | "Szafy i garderoby";
+  | "Szafy i garderoby"
+  | (string & {});
+
 
 export type FocalPoint = "center" | "left" | "right" | "top" | "bottom";
 

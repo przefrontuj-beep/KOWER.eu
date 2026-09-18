@@ -210,8 +210,8 @@ function hydrateProjectWithLocalCatalog(project: Project): Project | null {
 
   return removeProjectLocation({
     ...project,
-    title: shouldUseLocalCopy ? localProject.title : project.title || localProject.title,
-    category: shouldUseLocalCopy ? localProject.category : project.category || localProject.category,
+    title: project.title || localProject.title,
+    category: project.category || localProject.category,
     description: shouldUseLocalCopy ? localProject.description : project.description || localProject.description,
     tags: shouldUseLocalCopy
       ? localProject.tags
@@ -252,9 +252,11 @@ function completeProjectsWithLocalCatalog(
   return sortProjects(hydrated, orderField);
 }
 
-// Mapowanie kategorii z Firestore (małe litery) na kategorie publicznej strony (wielkie litery)
+// Mapowanie kategorii z Firestore na kategorie publicznej strony
 function mapCategory(category: string): ProjectCategory {
-  const c = category ? category.toLowerCase().trim() : "";
+  const raw = category ? category.trim() : "";
+  if (!raw) return "Zabudowy nietypowe";
+  const c = raw.toLowerCase();
   if (c === "kuchnie") return "Kuchnie";
   if (c === "łazienki") return "Łazienki";
   if (c === "garderoby" || c === "szafy") return "Szafy i garderoby";
@@ -265,7 +267,9 @@ function mapCategory(category: string): ProjectCategory {
   if (c === "lamele") return "Lamele";
   if (c === "realizacje") return "Zabudowy nietypowe";
   if (c === "detale") return "Detale";
-  return "Zabudowy nietypowe";
+  if (c === "strona główna") return "Inne";
+  // Zachowaj wpisaną przez użytkownika kategorię, dbając o wielką pierwszą literę
+  return raw.charAt(0).toUpperCase() + raw.slice(1);
 }
 
 // Slugowanie tekstu
@@ -330,7 +334,7 @@ function mapGalleryDocToProject(docData: DocumentData, id: string): Project | nu
     id: id,
     title: title,
     slug: linkedSlug || docData.slug || slugify(title) || id,
-    category: mappedCategory || localProject?.category,
+    category: mappedCategory || localProject?.category || "Inne",
     description: docData.caption || localProject?.description || "",
     coverImage: mediumUrl || thumbnailUrl,
     coverFocalPoint: "center",
@@ -473,6 +477,27 @@ export async function getProjects(maxResults = 100): Promise<Project[]> {
   }
 
   try {
+    const gallerySnapshot = await getDocs(
+      query(
+        collection(db, "kowerGallery"),
+        where("status", "==", "published"),
+        firestoreLimit(Math.max(maxResults * 3, 150)),
+      ),
+    );
+
+    const galleryProjects = gallerySnapshot.docs
+      .map((document) => mapGalleryDocToProject(document.data(), document.id))
+      .filter((project): project is Project => project !== null);
+
+    const galleryList = getGalleryProjects(
+      completeProjectsWithLocalCatalog(galleryProjects, "galleryOrder"),
+      maxResults,
+    );
+
+    if (galleryList.length > 0) {
+      return galleryList;
+    }
+
     const realizationsSnapshot = await getDocs(
       query(
         collection(db, "realizations"),
@@ -494,32 +519,7 @@ export async function getProjects(maxResults = 100): Promise<Project[]> {
       );
     }
 
-    const galleryRef = collection(db, "kowerGallery");
-    const q = query(
-      galleryRef,
-      where("isPublished", "==", true),
-      orderBy("order", "asc"),
-      firestoreLimit(maxResults)
-    );
-    const querySnapshot = await getDocs(q);
-    
-    if (querySnapshot.empty) {
-      console.warn("[getProjects] Brak opublikowanych zdjęć w Firestore. Używam danych lokalnych.");
-      return [];
-    }
-
-    const projectsList: Project[] = [];
-    querySnapshot.forEach((docSnap) => {
-      const project = mapGalleryDocToProject(docSnap.data(), docSnap.id);
-      if (project) {
-        projectsList.push(project);
-      }
-    });
-
-    return getGalleryProjects(
-      completeProjectsWithLocalCatalog(projectsList, "galleryOrder"),
-      maxResults,
-    );
+    return getGalleryProjects(localProjects, maxResults);
   } catch (error) {
     console.error("[getProjects] Błąd Firestore, używam fallbacku:", error);
     return getGalleryProjects(localProjects, maxResults);

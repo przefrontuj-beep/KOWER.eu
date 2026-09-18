@@ -46,6 +46,7 @@ import { useAdminAuth } from "@/hooks/useAdminAuth";
 import { logAdminActivity } from "@/lib/admin/activity";
 import { slugify } from "@/lib/admin/utils";
 import { compressAndCreateThumbnail } from "@/lib/projects/compression";
+import { REALIZATION_CATEGORIES } from "@/lib/admin/constants";
 import { AdminPageHeader } from "@/components/admin/AdminPageHeader";
 import { StatusBadge } from "@/components/admin/StatusBadge";
 import { Button } from "@/components/ui/button";
@@ -145,6 +146,7 @@ type HomepageImageEditForm = {
   alt: string;
   category: string;
   showOnHomepage: boolean;
+  showInGallery: boolean;
 };
 
 function asNumber(value: unknown, fallback: number) {
@@ -550,8 +552,9 @@ export function VisibilityOrderManager({ mode }: { mode: Mode }) {
     title: "",
     caption: "",
     alt: "",
-    category: "Strona główna",
+    category: "",
     showOnHomepage: true,
+    showInGallery: true,
   });
   
   // States for adding a new image with full descriptions and client-side compression
@@ -564,8 +567,9 @@ export function VisibilityOrderManager({ mode }: { mode: Mode }) {
     title: "",
     caption: "",
     alt: "",
-    category: "Strona główna",
+    category: "",
     showOnHomepage: true,
+    showInGallery: true,
   });
   const [addingNew, setAddingNew] = useState(false);
 
@@ -587,8 +591,9 @@ export function VisibilityOrderManager({ mode }: { mode: Mode }) {
       title: "",
       caption: "",
       alt: "",
-      category: "Strona główna",
+      category: "",
       showOnHomepage: true,
+      showInGallery: true,
     });
   };
 
@@ -662,7 +667,7 @@ export function VisibilityOrderManager({ mode }: { mode: Mode }) {
     const title = truncateText(addForm.title, MAX_HOMEPAGE_TITLE_LENGTH);
     const alt = truncateText(addForm.alt, MAX_HOMEPAGE_ALT_LENGTH);
     const caption = addForm.caption.trim();
-    const category = addForm.category.trim() || "Strona główna";
+    const category = addForm.category.trim() || "Inne";
 
     if (!title) {
       toast.error("Tytuł zdjęcia jest wymagany.");
@@ -743,7 +748,8 @@ export function VisibilityOrderManager({ mode }: { mode: Mode }) {
       setUploadLabel(`Zapisuję dane w bazie...`);
       setUploadProgress(95);
 
-      const status: Exclude<ContentStatus, "draft"> = addForm.showOnHomepage ? "published" : "hidden";
+      const isVisibleAnywhere = addForm.showOnHomepage || addForm.showInGallery;
+      const status: Exclude<ContentStatus, "draft"> = isVisibleAnywhere ? "published" : "hidden";
 
       const payload = {
         title,
@@ -776,10 +782,10 @@ export function VisibilityOrderManager({ mode }: { mode: Mode }) {
         thumbnailSizeBytes: compressed.thumbnailSizeBytes,
         format: compressed.format === "image/webp" ? "webp" : "jpeg",
         order: orderNumber,
-        isPublished: addForm.showOnHomepage,
+        isPublished: isVisibleAnywhere,
         featured: addForm.showOnHomepage,
         showOnHomepage: addForm.showOnHomepage,
-        showInGallery: false,
+        showInGallery: addForm.showInGallery,
         homepageOrder,
         galleryOrder: orderNumber,
         status,
@@ -909,8 +915,9 @@ export function VisibilityOrderManager({ mode }: { mode: Mode }) {
       title: item.title,
       caption: item.caption,
       alt: item.alt || `${item.title} - meble na wymiar KOWER`,
-      category: item.category || "Strona główna",
+      category: item.category || "",
       showOnHomepage: item.showOnHomepage,
+      showInGallery: item.showInGallery,
     });
   }
 
@@ -923,7 +930,7 @@ export function VisibilityOrderManager({ mode }: { mode: Mode }) {
     const title = truncateText(editForm.title, MAX_HOMEPAGE_TITLE_LENGTH);
     const alt = truncateText(editForm.alt, MAX_HOMEPAGE_ALT_LENGTH);
     const caption = editForm.caption.trim();
-    const category = editForm.category.trim() || "Strona główna";
+    const category = editForm.category.trim() || "Inne";
 
     if (!title) {
       toast.error("Tytuł zdjęcia jest wymagany.");
@@ -935,7 +942,8 @@ export function VisibilityOrderManager({ mode }: { mode: Mode }) {
       return;
     }
 
-    const status: Exclude<ContentStatus, "draft"> = editForm.showOnHomepage ? "published" : "hidden";
+    const isVisibleAnywhere = editForm.showOnHomepage || editForm.showInGallery;
+    const status: Exclude<ContentStatus, "draft"> = isVisibleAnywhere ? "published" : "hidden";
     const actor = user.email || user.uid;
 
     setSavingEdit(true);
@@ -946,8 +954,9 @@ export function VisibilityOrderManager({ mode }: { mode: Mode }) {
         alt,
         category,
         showOnHomepage: editForm.showOnHomepage,
+        showInGallery: editForm.showInGallery,
         featured: editForm.showOnHomepage,
-        isPublished: editForm.showOnHomepage,
+        isPublished: isVisibleAnywhere,
         status,
         updatedAt: serverTimestamp(),
         updatedBy: actor,
@@ -963,6 +972,7 @@ export function VisibilityOrderManager({ mode }: { mode: Mode }) {
                 alt,
                 category,
                 showOnHomepage: editForm.showOnHomepage,
+                showInGallery: editForm.showInGallery,
                 status,
               }
             : item,
@@ -978,99 +988,101 @@ export function VisibilityOrderManager({ mode }: { mode: Mode }) {
       toast.success("Zapisano opis zdjęcia.");
       setEditingItem(null);
     } catch (error) {
-      console.error("Błąd zapisu zdjęcia strony głównej:", error);
+      console.error("Błąd zapisu zdjęcia:", error);
       toast.error("Nie udało się zapisać zmian zdjęcia.");
     } finally {
       setSavingEdit(false);
     }
   }
 
-  async function handleDelete() {
+  async function handleDeleteConfirm() {
     if (!isHomepage || !db || !user || !deletingItem || deleting) {
       return;
     }
 
+    const item = deletingItem;
+    const actor = user.email || user.uid;
     setDeleting(true);
+
     try {
-      await deleteDoc(doc(db, "kowerGallery", deletingItem.id));
-
-      const storagePaths = [
-        deletingItem.storagePath,
-        deletingItem.mediumStoragePath,
-        deletingItem.thumbnailStoragePath,
-      ].filter(Boolean);
-
       const activeStorage = storage;
       if (activeStorage) {
+        const pathsToDelete = [
+          item.storagePath,
+          item.mediumStoragePath,
+          item.thumbnailStoragePath,
+        ].filter(Boolean);
+
         await Promise.allSettled(
-          storagePaths.map((path) =>
-            deleteObject(ref(activeStorage, path)).catch((error) => {
-              console.warn("Nie udało się usunąć pliku ze Storage:", error);
-            })
-          )
+          pathsToDelete.map((path) => deleteObject(ref(activeStorage, path))),
         );
       }
 
-      setItems((current) => current.filter((item) => item.id !== deletingItem.id));
+      await deleteDoc(doc(db, "kowerGallery", item.id));
 
+      setItems((current) => current.filter((currentItem) => currentItem.id !== item.id));
       await logAdminActivity({
         user,
         action: "delete",
         entityType: "kowerGallery",
-        entityId: deletingItem.id,
-        entityLabel: deletingItem.title,
+        entityId: item.id,
+        entityLabel: item.title,
       });
-
-      toast.success("Zdjęcie zostało usunięte.");
+      toast.success("Zdjęcie zostało usunięte z galerii.");
       setDeletingItem(null);
     } catch (error) {
-      console.error("Błąd podczas usuwania zdjęcia:", error);
-      toast.error("Wystąpił błąd podczas usuwania zdjęcia.");
+      console.error("Błąd usuwania zdjęcia:", error);
+      toast.error("Nie udało się usunąć zdjęcia z galerii.");
     } finally {
       setDeleting(false);
     }
   }
 
-  function setOrderedItems(nextSortedItems: ManagedVisibilityItem[]) {
-    setItems(
-      nextSortedItems.map((item, index) => ({
+  function handleMove(itemId: string, direction: -1 | 1) {
+    setItems((current) => {
+      const activeItems = current.filter((item) => item[visibilityKey]);
+      const inactiveItems = current.filter((item) => !item[visibilityKey]);
+      const reorderedActive = moveItem(activeItems, itemId, direction);
+
+      return [...reorderedActive, ...inactiveItems].map((item, index) => ({
         ...item,
         [orderKey]: index + 1,
-      })),
-    );
-  }
-
-  function reorderByTarget(sourceId: string | null, targetId: string) {
-    if (!sourceId || sourceId === targetId) {
-      setDraggedId(null);
-      return;
-    }
-
-    const sourceIndex = sortedItems.findIndex((item) => item.id === sourceId);
-    const targetIndex = sortedItems.findIndex((item) => item.id === targetId);
-    if (sourceIndex < 0 || targetIndex < 0) {
-      setDraggedId(null);
-      return;
-    }
-
-    const nextItems = [...sortedItems];
-    const [moved] = nextItems.splice(sourceIndex, 1);
-    nextItems.splice(targetIndex, 0, moved);
-    setOrderedItems(nextItems);
-    setDraggedId(null);
+      }));
+    });
   }
 
   function handleDrop(targetId: string) {
-    reorderByTarget(draggedId, targetId);
-  }
+    if (!draggedId || draggedId === targetId) {
+      return;
+    }
 
-  function handleMove(itemId: string, direction: -1 | 1) {
-    setOrderedItems(moveItem(sortedItems, itemId, direction));
+    setItems((current) => {
+      const activeItems = current.filter((item) => item[visibilityKey]);
+      const inactiveItems = current.filter((item) => !item[visibilityKey]);
+      const fromIndex = activeItems.findIndex((item) => item.id === draggedId);
+      const toIndex = activeItems.findIndex((item) => item.id === targetId);
+
+      if (fromIndex < 0 || toIndex < 0) {
+        return current;
+      }
+
+      const nextActive = [...activeItems];
+      const [movedItem] = nextActive.splice(fromIndex, 1);
+      nextActive.splice(toIndex, 0, movedItem);
+
+      return [...nextActive, ...inactiveItems].map((item, index) => ({
+        ...item,
+        [orderKey]: index + 1,
+      }));
+    });
+
+    setDraggedId(null);
   }
 
   async function handleVisibilityChange(itemId: string, checked: boolean) {
     let newOrder = 0;
-    
+    const currentItem = items.find((it) => it.id === itemId);
+
     setItems((current) =>
       current.map((item) => {
         if (item.id !== itemId) {
@@ -1103,13 +1115,14 @@ export function VisibilityOrderManager({ mode }: { mode: Mode }) {
     try {
       const actor = user.email || user.uid;
       const collectionName = isHomepage ? "kowerGallery" : "realizations";
+      const isVisibleAnywhere = checked || currentItem?.showInGallery;
       const payload = isHomepage
         ? {
             showOnHomepage: checked,
             homepageOrder: newOrder,
             featured: checked,
-            isPublished: checked,
-            status: checked ? "published" : "hidden",
+            isPublished: Boolean(isVisibleAnywhere),
+            status: isVisibleAnywhere ? "published" : "hidden",
             updatedAt: serverTimestamp(),
             updatedBy: actor,
           }
@@ -1125,6 +1138,43 @@ export function VisibilityOrderManager({ mode }: { mode: Mode }) {
     } catch (error) {
       console.error("Błąd zapisu widoczności:", error);
       toast.error("Nie udało się zapisać zmiany widoczności.");
+    }
+  }
+
+  async function handleGalleryVisibilityChange(itemId: string, checked: boolean) {
+    const currentItem = items.find((it) => it.id === itemId);
+    if (!currentItem) return;
+
+    setItems((current) =>
+      current.map((item) =>
+        item.id === itemId
+          ? {
+              ...item,
+              showInGallery: checked,
+            }
+          : item,
+      ),
+    );
+
+    if (!db || !user) return;
+    try {
+      const actor = user.email || user.uid;
+      const isVisibleAnywhere = currentItem.showOnHomepage || checked;
+      await updateDoc(doc(db, "kowerGallery", itemId), {
+        showInGallery: checked,
+        isPublished: isVisibleAnywhere,
+        status: isVisibleAnywhere ? "published" : "hidden",
+        updatedAt: serverTimestamp(),
+        updatedBy: actor,
+      });
+      toast.success(
+        checked
+          ? "Zdjęcie włączone na podstronie realizacji."
+          : "Zdjęcie ukryte na podstronie realizacji.",
+      );
+    } catch (error) {
+      console.error("Błąd zapisu widoczności w realizacjach:", error);
+      toast.error("Nie udało się zapisać zmiany widoczności w realizacjach.");
     }
   }
 
@@ -1324,14 +1374,21 @@ export function VisibilityOrderManager({ mode }: { mode: Mode }) {
                   <div className="min-w-0 flex-1">
                     <div className="flex flex-wrap items-center gap-2">
                       <StatusBadge status={item.status} />
-                      <Badge variant={visible ? "default" : "secondary"}>
-                        {visible ? (
-                          <Eye data-icon="inline-start" />
-                        ) : (
-                          <EyeOff data-icon="inline-start" />
-                        )}
-                        {visible ? "Widoczna" : "Ukryta"}
+                      <Badge variant="outline" className="border-[#487330]/30 bg-[#487330]/10 font-semibold text-[#487330]">
+                        {item.category}
                       </Badge>
+                      {item.showOnHomepage ? (
+                        <Badge variant="secondary" className="text-xs">
+                          <Home className="mr-1 size-3 text-[#487330]" />
+                          Główna
+                        </Badge>
+                      ) : null}
+                      {item.showInGallery ? (
+                        <Badge variant="secondary" className="text-xs">
+                          <GalleryHorizontalEnd className="mr-1 size-3 text-[#487330]" />
+                          Realizacje
+                        </Badge>
+                      ) : null}
                     </div>
 
                     <h2 className="mt-3 line-clamp-2 font-serif text-2xl font-semibold">
@@ -1391,23 +1448,28 @@ export function VisibilityOrderManager({ mode }: { mode: Mode }) {
                           Usuń
                         </Button>
                       ) : null}
-                      <label className="ml-auto inline-flex items-center gap-3 rounded-lg border bg-background px-3 py-2 text-sm font-medium">
-                        <span>
-                          {isHomepage
-                            ? visible
-                              ? "Na głównej"
-                              : "Poza główną"
-                            : visible
-                              ? "Pokazuj"
-                              : "Nie pokazuj"}
-                        </span>
-                        <Switch
-                          checked={visible}
-                          onCheckedChange={(checked) =>
-                            handleVisibilityChange(item.id, checked)
-                          }
-                        />
-                      </label>
+                      <div className="ml-auto flex flex-wrap items-center gap-2">
+                        <label className="inline-flex items-center gap-2 rounded-lg border bg-background px-3 py-2 text-xs font-medium">
+                          <Home className="size-3.5 text-muted-foreground" />
+                          <span>Główna</span>
+                          <Switch
+                            checked={item.showOnHomepage}
+                            onCheckedChange={(checked) =>
+                              handleVisibilityChange(item.id, checked)
+                            }
+                          />
+                        </label>
+                        <label className="inline-flex items-center gap-2 rounded-lg border bg-background px-3 py-2 text-xs font-medium">
+                          <GalleryHorizontalEnd className="size-3.5 text-muted-foreground" />
+                          <span>Realizacje</span>
+                          <Switch
+                            checked={item.showInGallery}
+                            onCheckedChange={(checked) =>
+                              handleGalleryVisibilityChange(item.id, checked)
+                            }
+                          />
+                        </label>
+                      </div>
                     </div>
                   </div>
                 </CardContent>
@@ -1616,13 +1678,20 @@ export function VisibilityOrderManager({ mode }: { mode: Mode }) {
                       <FieldLabel htmlFor="homepage-image-add-category">Kategoria</FieldLabel>
                       <Input
                         id="homepage-image-add-category"
-                        placeholder="np. Kuchnie"
+                        list="category-suggestions"
+                        placeholder="Wpisz lub wybierz (np. Kuchnie, Stoły, Szafy...)"
                         value={addForm.category}
                         onChange={(event) =>
                           setAddForm((current) => ({ ...current, category: event.target.value }))
                         }
                         disabled={addingNew}
                       />
+                      <datalist id="category-suggestions">
+                        {REALIZATION_CATEGORIES.map((cat) => (
+                          <option key={cat} value={cat} />
+                        ))}
+                        <option value="Stoły" />
+                      </datalist>
                     </Field>
                   </div>
 
@@ -1674,7 +1743,7 @@ export function VisibilityOrderManager({ mode }: { mode: Mode }) {
                     />
                   </Field>
 
-                  {/* Visibility toggle card */}
+                  {/* Visibility toggle card - Homepage */}
                   <div className={[
                     "flex items-center gap-4 rounded-xl border p-4 transition-colors",
                     addForm.showOnHomepage
@@ -1694,7 +1763,7 @@ export function VisibilityOrderManager({ mode }: { mode: Mode }) {
                       <p className="mt-0.5 text-xs text-muted-foreground">
                         {addForm.showOnHomepage
                           ? "Zdjęcie pojawi się od razu w karuzeli na stronie głównej."
-                          : "Zdjęcie zostanie dodane do biblioteki, ale nie będzie widoczne w karuzeli."}
+                          : "Zdjęcie nie będzie widoczne w karuzeli na stronie głównej."}
                       </p>
                     </div>
                     <Switch
@@ -1702,6 +1771,39 @@ export function VisibilityOrderManager({ mode }: { mode: Mode }) {
                       checked={addForm.showOnHomepage}
                       onCheckedChange={(checked) =>
                         setAddForm((current) => ({ ...current, showOnHomepage: checked }))
+                      }
+                      disabled={addingNew}
+                    />
+                  </div>
+
+                  {/* Visibility toggle card - Gallery / Realizacje */}
+                  <div className={[
+                    "flex items-center gap-4 rounded-xl border p-4 transition-colors",
+                    addForm.showInGallery
+                      ? "border-[#487330]/20 bg-[#487330]/[0.04]"
+                      : "border-border bg-muted/30",
+                  ].join(" ")}>
+                    <div className={[
+                      "flex size-10 shrink-0 items-center justify-center rounded-lg transition-colors",
+                      addForm.showInGallery ? "bg-[#487330]/15 text-[#487330]" : "bg-muted text-muted-foreground",
+                    ].join(" ")}>
+                      {addForm.showInGallery ? <Eye className="size-5" /> : <EyeOff className="size-5" />}
+                    </div>
+                    <div className="min-w-0 flex-1">
+                      <label htmlFor="homepage-image-add-gallery-visible" className="cursor-pointer text-sm font-semibold text-foreground">
+                        Widoczne na podstronie Realizacje (/realizacje)
+                      </label>
+                      <p className="mt-0.5 text-xs text-muted-foreground">
+                        {addForm.showInGallery
+                          ? "Zdjęcie pojawi się w galerii realizacji z wpisaną kategorią."
+                          : "Zdjęcie nie będzie widoczne na podstronie realizacji."}
+                      </p>
+                    </div>
+                    <Switch
+                      id="homepage-image-add-gallery-visible"
+                      checked={addForm.showInGallery}
+                      onCheckedChange={(checked) =>
+                        setAddForm((current) => ({ ...current, showInGallery: checked }))
                       }
                       disabled={addingNew}
                     />
@@ -1857,7 +1959,8 @@ export function VisibilityOrderManager({ mode }: { mode: Mode }) {
                       <FieldLabel htmlFor="homepage-image-category">Kategoria</FieldLabel>
                       <Input
                         id="homepage-image-category"
-                        placeholder="np. Kuchnie"
+                        list="category-suggestions"
+                        placeholder="Wpisz lub wybierz (np. Kuchnie, Stoły, Szafy...)"
                         value={editForm.category}
                         onChange={(event) =>
                           setEditForm((current) => ({ ...current, category: event.target.value }))
@@ -1915,7 +2018,7 @@ export function VisibilityOrderManager({ mode }: { mode: Mode }) {
                     />
                   </Field>
 
-                  {/* Visibility toggle card */}
+                  {/* Visibility toggle card - Homepage */}
                   <div className={[
                     "flex items-center gap-4 rounded-xl border p-4 transition-colors",
                     editForm.showOnHomepage
@@ -1935,7 +2038,7 @@ export function VisibilityOrderManager({ mode }: { mode: Mode }) {
                       <p className="mt-0.5 text-xs text-muted-foreground">
                         {editForm.showOnHomepage
                           ? "Zdjęcie jest widoczne w karuzeli na stronie głównej."
-                          : "Zdjęcie zostaje w bibliotece, ale nie jest widoczne w karuzeli."}
+                          : "Zdjęcie nie jest widoczne w karuzeli na stronie głównej."}
                       </p>
                     </div>
                     <Switch
@@ -1943,6 +2046,39 @@ export function VisibilityOrderManager({ mode }: { mode: Mode }) {
                       checked={editForm.showOnHomepage}
                       onCheckedChange={(checked) =>
                         setEditForm((current) => ({ ...current, showOnHomepage: checked }))
+                      }
+                      disabled={savingEdit}
+                    />
+                  </div>
+
+                  {/* Visibility toggle card - Gallery / Realizacje */}
+                  <div className={[
+                    "flex items-center gap-4 rounded-xl border p-4 transition-colors",
+                    editForm.showInGallery
+                      ? "border-[#487330]/20 bg-[#487330]/[0.04]"
+                      : "border-border bg-muted/30",
+                  ].join(" ")}>
+                    <div className={[
+                      "flex size-10 shrink-0 items-center justify-center rounded-lg transition-colors",
+                      editForm.showInGallery ? "bg-[#487330]/15 text-[#487330]" : "bg-muted text-muted-foreground",
+                    ].join(" ")}>
+                      {editForm.showInGallery ? <Eye className="size-5" /> : <EyeOff className="size-5" />}
+                    </div>
+                    <div className="min-w-0 flex-1">
+                      <label htmlFor="homepage-image-gallery-visible" className="cursor-pointer text-sm font-semibold text-foreground">
+                        Widoczne na podstronie Realizacje (/realizacje)
+                      </label>
+                      <p className="mt-0.5 text-xs text-muted-foreground">
+                        {editForm.showInGallery
+                          ? "Zdjęcie pojawi się w galerii realizacji z wpisaną kategorią."
+                          : "Zdjęcie nie będzie widoczne na podstronie realizacji."}
+                      </p>
+                    </div>
+                    <Switch
+                      id="homepage-image-gallery-visible"
+                      checked={editForm.showInGallery}
+                      onCheckedChange={(checked) =>
+                        setEditForm((current) => ({ ...current, showInGallery: checked }))
                       }
                       disabled={savingEdit}
                     />
@@ -1986,7 +2122,7 @@ export function VisibilityOrderManager({ mode }: { mode: Mode }) {
                 variant="destructive"
                 onClick={(e) => {
                   e.preventDefault();
-                  handleDelete();
+                  handleDeleteConfirm();
                 }}
                 disabled={deleting}
               >
